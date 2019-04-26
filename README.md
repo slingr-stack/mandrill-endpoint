@@ -1,0 +1,2 @@
+# mandrill-endpoint
+Mandrill endpoint
