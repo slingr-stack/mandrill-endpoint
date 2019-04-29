@@ -1,0 +1,186 @@
+{
+    "label": "Mandrill",
+    "name": "mandrill",
+    "apiVersion": "v1",
+    "internal": false,
+    "configurationType": "GLOBAL",
+    "deployment": {
+        "profiles":[
+            {
+                "name": "default",
+                "label": "Default",
+                "memory": 384,
+                "offHeapMinFactor": 1.5,
+                "description": "Default configuration"
+            },
+            {
+                "name": "bigfiles",
+                "label": "Big Files",
+                "memory": 1024,
+                "description": "Use this configuration if you want to receive big filesas response to emails"
+            }
+        ],
+        "allowMultipleInstances": false
+    },
+    "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/mandrill.png",
+    "status": "ACTIVE",
+    "stores": [
+        {"name": "requests-store"}
+    ],
+    "events": [
+        {
+            "label": "Response Arrived",
+            "name": "responseArrived",
+            "description": "Event thrown when a new response email to a previous sent email arrives to the endpoint."
+        },
+        {
+            "label": "Email Arrived",
+            "name": "emailArrived",
+            "description": "Event thrown when a new email arrives to the endpoint and it is not a response to a previous sent email."
+        },
+        {
+            "label": "Email Event",
+            "name": "emailEvent",
+            "description": "Event thrown when something happens with a message on Mandrill. The event type can be one o the following ones: send, deferral, hard_bounce, soft_bounce, open, click, spam, unsub, reject. Check the representation of the message on the link.",
+            "links":[
+                "https://mandrill.zendesk.com/hc/en-us/articles/205583307-Message-Event-Webhook-format"
+            ]
+        },
+        {
+            "label": "Sync Event",
+            "name": "syncEvent",
+            "description": "Sync events allow you to keep your Rejection Whitelist and Rejection Blacklist synced to your own database or CRM by sending information about additions and removals via webhooks. For whitelist entries, a webhook will be triggered when an entry is added or removed. For blacklist entries, an event will be triggered when an address is added, removed, or changed (ie, if it was already on the rejection blacklist before, and gets added back because of a new event).. Check the representation of the message on the link.",
+            "links":[
+                "https://mandrill.zendesk.com/hc/en-us/articles/205583297-Sync-Event-Webhook-format"
+            ]
+        }
+    ],
+    "functions": [
+        {
+            "label": "POST",
+            "name": "_post",
+            "callbacks": [
+                {
+                    "name": "responseArrived"
+                },
+                {
+                    "name": "emailArrived"
+                },
+                {
+                    "name": "emailEvent"
+                },
+                {
+                    "name": "syncEvent"
+                }
+            ]
+        },
+        {
+            "label": "Send Email - Old version",
+            "name": "_sendEmailOld",
+            "callbacks": [
+                {
+                    "name": "responseArrived"
+                },
+                {
+                    "name": "emailEvent"
+                }
+            ]
+        },
+        {
+            "label": "Convert date to time",
+            "name": "_convertDateToTimestamp"
+        },
+        {
+            "label": "Format from milliseconds",
+            "name": "_formatFromMillis"
+        },
+        {
+            "label": "Convert old event",
+            "name": "_convertEvent"
+        },
+        {
+            "label": "Get resource by id",
+            "name": "_getResourceById"
+        }
+    ],
+    "scripts": [
+        "functions.js",
+        "mandrill-fn-helpers.js"
+    ],
+    "configuration":[
+        {
+            "name": "apiKey",
+            "label": "API key",
+            "description": "API key",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "fromName",
+            "label": "Sender name",
+            "description": "Name of the sender of the emails",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "account",
+            "label": "Sender account",
+            "description": "Account to use as sender of the emails (Do not include the @ and the domain).",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "domain",
+            "label": "Sender domain",
+            "description": "Domain to use as sender of the emails (Do not include the @ and the account name).",
+            "type": "text",
+            "required": true
+        },
+        {
+            "name": "accountLabel",
+            "label": "Account",
+            "type": "label",
+            "value": "(config.account ? config.account : '...')+'@'+(config.domain ? config.domain : '...')"
+        },
+        {
+            "name": "webhook",
+            "label": "Webhook URL",
+            "type": "label",
+            "value": "@config.WEBHOOK_URL"
+        },
+        {
+            "name": "redirectEnabled",
+            "label": "Redirect Emails",
+            "description": "If it is enabled, all the emails will be sent to the redirect address instead to the real ones. This parameter is available only in dev environments. Valid values 'enable', 'disable', and with placeholders ('Custom' option).",
+            "type": "buttonsGroup",
+            "required": true,
+            "defaultValue": "disable",
+            "typeOptions": {
+                "allowCustom": true,
+                "possibleValues":[
+                    {
+                        "label":"Enable",
+                        "name":"enable"
+                    },
+                    {
+                        "label":"Disable",
+                        "name":"disable"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "redirectEmail",
+            "label": "Redirect To Address",
+            "description": "Redirect address used as receiver of all the emails when the redirect option is enabled.",
+            "type": "text",
+            "visibility": "config.redirectEnabled && config.redirectEnabled != 'disable'"
+        },
+        {
+            "name": "config",
+            "label": "Configuration",
+            "value": "<ul><li>Please, check the setting page to create a new API key: <a href='https://mandrillapp.com/settings/' target='_blank'>Settings page</a></li><li>Configure the inbound domain in order to receive messages and notifications: <a href='http://help.mandrill.com/entries/21699367-Inbound-Email-Processing-Overview' target='_blank'>Inbound Email Processing Overview</a></li><li>You will need to configure the Webhook URL as a route inside of the registered inbound domain: <a href='https://mandrillapp.com/inbound' target='_blank'>Inbound page</a>. </li><li>A new webhook (as well the one that we use as inbound webhook) can be configured to receive different kind of message and sync events: <a href='https://mandrillapp.com/settings/webhooks' target='_blank'>Webhooks page</a>. </li></ul>",
+            "type": "info"
+        }
+    ]
+}
