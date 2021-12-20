@@ -17,7 +17,7 @@
                 "name": "bigfiles",
                 "label": "Big Files",
                 "memory": 1024,
-                "description": "Use this configuration if you want to receive big filesas response to emails"
+                "description": "Use this configuration if you want to receive big files as response to emails"
             }
         ],
         "allowMultipleInstances": false
@@ -105,7 +105,8 @@
     ],
     "scripts": [
         "functions.js",
-        "mandrill-fn-helpers.js"
+        "http-generic-helpers.js",
+        "mandrill-helpers.js"
     ],
     "configuration":[
         {
@@ -147,6 +148,11 @@
             "label": "Webhook URL",
             "type": "label",
             "value": "@config.WEBHOOK_URL"
+        },
+        {
+            "name": "webhooksKey",
+            "label": "Webhooks Key",
+            "type": "text"
         },
         {
             "name": "redirectEnabled",

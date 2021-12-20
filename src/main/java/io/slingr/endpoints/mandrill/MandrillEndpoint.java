@@ -1,6 +1,7 @@
 package io.slingr.endpoints.mandrill;
 
 import io.slingr.endpoints.HttpEndpoint;
+import io.slingr.endpoints.configurations.EndpointContext;
 import io.slingr.endpoints.exceptions.EndpointException;
 import io.slingr.endpoints.framework.annotations.*;
 import io.slingr.endpoints.mandrill.old.beans.Service;
@@ -16,14 +17,19 @@ import io.slingr.endpoints.utils.Json;
 import io.slingr.endpoints.ws.exchange.FunctionRequest;
 import io.slingr.endpoints.ws.exchange.WebServiceRequest;
 import io.slingr.endpoints.ws.exchange.WebServiceResponse;
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import io.slingr.endpoints.mandrill.utils.WebhookConverter;
 
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
+import javax.servlet.ServletOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.Executors;
 
 /**
  * <p>Mandrill endpoint
@@ -44,6 +50,9 @@ public class MandrillEndpoint extends HttpEndpoint {
 
     @EndpointProperty
     private String apiKey;
+
+    @EndpointProperty
+    private String webhooksKey;
 
     @EndpointProperty
     private String account;
@@ -93,6 +102,7 @@ public class MandrillEndpoint extends HttpEndpoint {
         });
         final MandrillClient mandrillClient = new MandrillClient(apiKey);
         service = new Service(files(), appLogs(), mandrillClient, requestsDataStore, account, domain, fromName, redirectEnabled, redirectEmail);
+
     }
 
     @EndpointFunction(name = "_post")
@@ -142,13 +152,17 @@ public class MandrillEndpoint extends HttpEndpoint {
 
             Json msgToSave = Json.map();
             msgToSave.set("hash", hash);
-            msgToSave.set("_ids", ids);
+            msgToSave.set("ids", ids);
             msgToSave.set("receivers", emails);
             msgToSave.set("template", false);
             msgToSave.set("isFunction", true);
             msgToSave.set("functionId", request.getFunctionId());
 
+            System.out.println("msgToSave is: "+msgToSave.toString());
+
             StoreMessage.saveData(requestsDataStore, msgToSave);
+
+            //testCallback(request);
 
             return response;
 
@@ -156,6 +170,21 @@ public class MandrillEndpoint extends HttpEndpoint {
             req.set("body", body);
             return httpService().defaultPostRequest(req);
         }
+
+    }
+
+    private void testCallback(FunctionRequest request){
+        String app = EndpointContext.getCurrentApp();
+        String env = EndpointContext.getCurrentEnv();
+        //events().send((Long)null, "emailEvent", Json.map().set("test", "yes"), request.getFunctionId(), (String)null, (String)null, 1);
+        Executors.newSingleThreadExecutor().execute(() -> {
+            try {
+                EndpointContext.initContext(app, env);
+                events().send((Long)null, "emailEvent", Json.map().set("test", "yes"), request.getFunctionId(), (String)null, (String)null, 1);
+            } catch (Exception var6) {
+                logger.warn(String.format("Exception when try to send the 'fileDownloaded' event - exception: %s", var6.getMessage()), var6);
+            }
+        });
 
     }
 
@@ -198,15 +227,20 @@ public class MandrillEndpoint extends HttpEndpoint {
 
     }
 
-    @EndpointFunction(name = "_sendEmailOld")
-    public Json sendEmailOld(FunctionRequest request) {
-        Json body = request.getJsonParams();
-
-        return this.service.sendEmail(body.json("msg"), request.getFunctionId());
-    }
-
     @EndpointWebService(path = "/")
     public WebServiceResponse webhookProcessor(WebServiceRequest request) {
+        System.out.println("The webhook body is: "+request.getJsonBody().toString());
+        boolean validWebhook;
+        try {
+            validWebhook = validateWebhookSignature(request.getHeader("x-mandrill-signature"),request.getJsonBody());
+        } catch (Exception error) {
+            appLogs().error("The following error ocurred while validating the webhook signature: ["+error.getMessage()+"].",error);
+            return HttpService.defaultWebhookResponse();
+        }
+        if (!validWebhook) {
+            appLogs().info("Mandrill webhook discarded because signature did not match.");
+            return HttpService.defaultWebhookResponse();
+        }
         try {
             final Json response = request.getJsonBody().json(MANDRILL_EVENTS);
             if (response != null && response.isList()) {
@@ -227,7 +261,52 @@ public class MandrillEndpoint extends HttpEndpoint {
         return HttpService.defaultWebhookResponse();
     }
 
+    private boolean validateWebhookSignature(String mandrillSignature,Json webhookPayload) throws Exception{
+        String webhooksUrl = properties().getWebServicesUri();
+        String webhooksKey = this.webhooksKey;
+
+        if (webhooksKey == null) {
+            throw new Exception("The endpoint received a webhook but the \"Webhooks Key\" has not been set in the endpoint configuration. Please add the webhooks key or remove the webhooks from Mandrill dashboard.");
+        }
+        String dataToSign = webhooksUrl;
+        for (String payloadKey: webhookPayload.keys()) {
+            System.out.println("payloadKey: "+payloadKey);
+            System.out.println("payload.string(payloadKey): "+webhookPayload.string(payloadKey));
+            dataToSign += payloadKey + webhookPayload.string(payloadKey);
+            if(webhookPayload.string(payloadKey) == webhookPayload.string(payloadKey).replaceAll("\n",""))System.out.println("HOLAAAAAAAA");
+            System.out.println("dataToSign: "+dataToSign);
+        }
+        String calculatedWebhookSignature = calculateWebhookSignature(dataToSign,webhooksKey);
+        System.out.println("calculatedWebhookSignature: "+calculatedWebhookSignature);
+        System.out.println("mandrillSignature: "+mandrillSignature);
+
+        if (mandrillSignature == calculatedWebhookSignature){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private String calculateWebhookSignature(String dataToSign,String webhooksKey){
+        try {
+            // Get a hmac_sha1 key from the raw key bytes
+            SecretKeySpec signingKey = new SecretKeySpec(webhooksKey.getBytes(), "HmacSHA1");
+            // Get a hmac_sha1 Mac instance and initialize with the signing key
+            Mac mac = Mac.getInstance("HmacSHA1");
+            mac.init(signingKey);
+            // Compute the hmac on input data bytes
+            byte[] rawHmac = mac.doFinal(dataToSign.getBytes("UTF-8"));
+            // Convert raw bytes to Base64
+            byte[] encoded = Base64.getEncoder().encode(rawHmac);
+            //  Covert array of bytes to a String
+            return new String(encoded);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
     private Json processEvent(Json event) {
+
+        System.out.println("ENTRA processEvent");
 
         String eventName = EVENT_EMAIL_ARRIVED;
 
@@ -238,6 +317,7 @@ public class MandrillEndpoint extends HttpEndpoint {
         try {
             final String eventType = eventConv.string(WebhookConverter.SLINGR_EVENT);
             if (StringUtils.isNotBlank(eventType)) {
+                System.out.println("ENTRA processEvent, primer if");
                 eventName = EVENT_EMAIL_EVENT;
                 if (WebhookConverter.EVENT_WHITELIST.equalsIgnoreCase(eventType) || WebhookConverter.EVENT_BLACKLIST.equalsIgnoreCase(eventType)) {
                     eventName = EVENT_SYNC_EVENT;
@@ -245,19 +325,24 @@ public class MandrillEndpoint extends HttpEndpoint {
                 } else {
                     final String id = eventConv.string(WebhookConverter.MANDRILL_ID);
                     if (StringUtils.isNotBlank(id)) {
-                        final List<Json> requests = new ArrayList<>();
+                        System.out.println("ENTRA if(StringUtils.isNotBlank(id))");
+                        final List<Json>requests = new ArrayList<>();
                         try {
                             final DataStoreResponse requestsDs = requestsDataStore.find(Json.map().set(DataStoreConverter.IDS, id));
+                            System.out.println("requestsDs.getItems() es:"+requestsDs.getItems().toString());
                             requests.addAll(requestsDs.getItems());
                         } catch (Exception ex) {
                             logger.warn(String.format("Error finding requests [%s] in data store - exception: [%s]", id, ex.toString()), ex);
                         }
                         if (!requests.isEmpty()) {
+                            System.out.println("ENTRA if(!requests.isEmpty())");
                             final Json request = requests.get(0);
 
                             if (Boolean.TRUE.equals(request.bool("isOld"))) {
                                 events().send(eventName, eventConv, request.string(DataStoreConverter.FUNCTION_ID));
                             } else {
+                                System.out.println("ENTRA ACAAAAA!!!");
+                                System.out.printf("eventName: %s.%n",eventName);
                                 WebhookConverter.wrapFilesToApp(event, eventConv);
                                 events().send(eventName, event, request.string(DataStoreConverter.FUNCTION_ID));
                             }
@@ -268,6 +353,7 @@ public class MandrillEndpoint extends HttpEndpoint {
                     }
                 }
             } else {
+                System.out.println("ENTRA processEvent, primer else");
                 final String id = eventConv.string(WebhookConverter.SLINGR_ID);
                 if (StringUtils.isNotBlank(id)) {
                     final List<Json> requests = new ArrayList<>();

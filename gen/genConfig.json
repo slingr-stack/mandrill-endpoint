@@ -1,0 +1,650 @@
+{
+    "fileName": "mandrill-helpers",
+    "endpointName": "mandrill",
+    "apiDescriptors": [
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/allowlists/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/allowlists/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/allowlists/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/activity",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/rejects",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/whitelist",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/add-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/add-route",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/check-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/delete-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/delete-route",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/domains",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/routes",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/send-raw",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/inbound/update-route",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/cancel-warmup",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/check-custom-dns",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/create-pool",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/delete-pool",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/list-pools",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/pool-info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/provision",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/set-custom-dns",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/set-pool",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/ips/start-warmup",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/cancel-scheduled",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/content",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/list-scheduled",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/parse",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/reschedule",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/search",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/search-time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/send",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/send-raw",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/messages/send-template",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/metadata/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/metadata/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/metadata/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/metadata/update",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/rejects/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/rejects/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/rejects/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/add-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/check-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/domains",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/senders/verify-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/pause",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/resume",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/subaccounts/update",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/tags/all-time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/tags/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/tags/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/tags/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/tags/time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/publish",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/render",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/templates/update",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/check-tracking-domain",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/search",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/time-series",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/tracking-domains",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/users/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/users/ping",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/users/ping2",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/users/senders",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/webhooks/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/webhooks/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/webhooks/info",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/webhooks/list",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/webhooks/update",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/whitelists/add",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/whitelists/delete",
+            "acceptsCallbacks": true
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/whitelists/list",
+            "acceptsCallbacks": true
+        }
+    ]
+}
