@@ -24,67 +24,17 @@
     },
     "icon48": "https://storage.googleapis.com/static.slingrs.io/platform/endpoints/mandrill.png",
     "status": "ACTIVE",
-    "stores": [
-        {"name": "requests-store"}
-    ],
     "events": [
         {
-            "label": "Response Arrived",
-            "name": "responseArrived",
-            "description": "Event thrown when a new response email to a previous sent email arrives to the endpoint."
-        },
-        {
-            "label": "Email Arrived",
-            "name": "emailArrived",
-            "description": "Event thrown when a new email arrives to the endpoint and it is not a response to a previous sent email."
-        },
-        {
-            "label": "Email Event",
-            "name": "emailEvent",
-            "description": "Event thrown when something happens with a message on Mandrill. The event type can be one o the following ones: send, deferral, hard_bounce, soft_bounce, open, click, spam, unsub, reject. Check the representation of the message on the link.",
-            "links":[
-                "https://mandrill.zendesk.com/hc/en-us/articles/205583307-Message-Event-Webhook-format"
-            ]
-        },
-        {
-            "label": "Sync Event",
-            "name": "syncEvent",
-            "description": "Sync events allow you to keep your Rejection Whitelist and Rejection Blacklist synced to your own database or CRM by sending information about additions and removals via webhooks. For whitelist entries, a webhook will be triggered when an entry is added or removed. For blacklist entries, an event will be triggered when an address is added, removed, or changed (ie, if it was already on the rejection blacklist before, and gets added back because of a new event).. Check the representation of the message on the link.",
-            "links":[
-                "https://mandrill.zendesk.com/hc/en-us/articles/205583297-Sync-Event-Webhook-format"
-            ]
+            "label": "Webhooks",
+            "name": "webhooks",
+            "description": "Event thrown when a webhook from mandrill arrives to the endpoint."
         }
     ],
     "functions": [
         {
             "label": "POST",
-            "name": "_post",
-            "callbacks": [
-                {
-                    "name": "responseArrived"
-                },
-                {
-                    "name": "emailArrived"
-                },
-                {
-                    "name": "emailEvent"
-                },
-                {
-                    "name": "syncEvent"
-                }
-            ]
-        },
-        {
-            "label": "Send Email - Old version",
-            "name": "_sendEmailOld",
-            "callbacks": [
-                {
-                    "name": "responseArrived"
-                },
-                {
-                    "name": "emailEvent"
-                }
-            ]
+            "name": "_post"
         },
         {
             "label": "Convert date to time",
@@ -95,12 +45,8 @@
             "name": "_formatFromMillis"
         },
         {
-            "label": "Convert old event",
-            "name": "_convertEvent"
-        },
-        {
-            "label": "Get resource by id",
-            "name": "_getResourceById"
+            "label": "Get Base64 encoding by fileId",
+            "name": "_fileIdToBase64"
         }
     ],
     "scripts": [
@@ -108,7 +54,7 @@
         "http-generic-helpers.js",
         "mandrill-helpers.js"
     ],
-    "configuration":[
+    "configuration": [
         {
             "name": "apiKey",
             "label": "API key",
