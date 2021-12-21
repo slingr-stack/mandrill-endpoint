@@ -1,7 +1,7 @@
 ---
 title: Mandrill endpoint
 keywords: 
-last_updated: November 28, 2017
+last_updated: November 21, 2021
 tags: []
 summary: "Detailed description of the API of the Mandrill endpoint."
 ---
@@ -20,39 +20,14 @@ In most cases you will be using the provided shortcuts to access the API. For ex
 directly by doing an HTTP request like this:
 
 ```js
-var res = app.endpoints.mandrill.post('/users/info.json', {});
+var res = app.endpoints.mandrill.post('/users/info', {});
 ```
-
-However you probably want to use the shortcuts:
-
+However, you probably want to use the shortcuts:
 ```js
 var res = app.endpoints.mandrill.users.info();
 ```
-
 These shortcuts are based on the [Mandrill REST API](https://mandrillapp.com/api/docs/).
 You can see more information about that in the [shortcuts section](#shortcuts).
-
-## Quick start
-
-One common integration case with Mandrill is send an email. For example:
-
-```js
-var res = app.endpoints.mandrill.messages.send({
- "message": {
-   "html": "<p>Example HTML content</p>",
-   "text": "Example text content",
-   "subject": "example subject",
-   "from_name": "Example Name",
-   "to": [
-     {
-       "email": "recipient.email@example.com",
-       "name": "Recipient Name",
-       "type": "to"
-     }
-   ]
- }
-});
-```
 
 ## Configuration
 
@@ -81,6 +56,55 @@ If it is enabled, all the emails will be sent to the redirect address instead to
 ### Redirect to address
 Redirect address used as receiver of all the emails when the redirect option is enabled. This parameter is available only in dev environments.
 
+## Quick start
+
+One common integration case with Mandrill is send an email.
+You can do so like this:
+```js
+var res = app.endpoints.mandrill.messages.send({
+ "message": {
+   "html": "<p>Example HTML content</p>",
+   "text": "Example text content",
+   "subject": "example subject",
+   "from_name": "Example Name",
+   "to": [
+     {
+       "email": "recipient.email@example.com",
+       "name": "Recipient Name",
+       "type": "to"
+     }
+   ]
+ }
+});
+```
+Another common use for mandrill is to send mails with a template.
+You can also do that like the following:
+```js
+var res = app.endpoints.mandrill.messages.sendTemplate({
+  "template_name": "exampleTemplate",
+  "template_content": [
+    {
+      "name": "someMcEditRegion",
+      "content": "someContent"
+    }
+  ],
+  "message": {
+   "html": "<p>Aditional example HTML content</p>",
+   "text": "Aditional Example plain text content",
+   "subject": "example subject",
+   "from_name": "Example Name",
+   "to": [
+     {
+       "email": "recipient.email@example.com",
+       "name": "Recipient Name",
+       "type": "to"
+     }
+   ]
+ }
+});
+```
+For additional parameters when sending mails with or without template check the [Mandrill API - Messages](https://mailchimp.com/developer/transactional/api/messages/).
+
 ## Javascript API
 
 The Javascript API of the Mandrill endpoint has three pieces:
@@ -94,11 +118,11 @@ The Javascript API of the Mandrill endpoint has three pieces:
 You can make `POST` request to the [Mandrill API](https://mandrillapp.com/api/docs/) like this:
 
 ```js
-var response = app.endpoints.mandrill.post('/messages/send.json', {...});
-var tempResponse = app.endpoints.mandrill.post('/templates/time-series.json', {...});
+var response = app.endpoints.mandrill.post('/messages/send', {...});
+var tempResponse = app.endpoints.mandrill.post('/templates/time-series', {...});
 ```
 
-Please take a look at the documentation of the [HTTP endpoint]({{site.baseurl}}/endpoints_http.html#javascript-api)
+Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
 for more information.
 
 ### Shortcuts
@@ -106,11 +130,10 @@ for more information.
 Instead of having to use the generic HTTP methods, you can make use of the shortcuts provided in the endpoint. These
 shortcuts follow these rules:
 
-- **Path sections get converted to namespaces**: for example `~/messages/send.json` 
+- **Path sections get converted to namespaces**: for example `~/messages/send` 
   it is converted to `app.endpoints.mandrill.messages.send({...})`. 
-- **If they have dashes, we should convert them to camel case**: `~/templates/time-series.json` is converted to 
-  `app.endpoints.mandrill.templates.timeSeries()`. 
-- **.json is ignored in helpers**
+- **If they have dashes, we should convert them to camel case**: `~/templates/time-series` is converted to 
+  `app.endpoints.mandrill.templates.timeSeries()`.
   
 ### Date helpers
 
@@ -133,56 +156,18 @@ var mandrillDate = app.endpoints.mandrill.dates.fromDate(new Date());
 
 ## Events
 
-### Webhook
+### Webhooks
 
 Mandrill's webhooks allow your application to receive information about email events as they occur.
+To learn how to set up, see a list of possible webhooks and their formats check [here](https://mailchimp.com/developer/transactional/guides/track-respond-activity-webhooks/).
 
-### Received email
-Event thrown when an email is received by the Mandrill service
-
-### Received response to a previously sent email
-Events thrown when an email is received by the Mandrill service as response to a previously sent email through the messages.send or messages.sendTemplate functions.
-
-### Email events
-Event thrown when something happens with a message on Mandrill. The event type can be one o the following ones: send, deferral, hard_bounce, soft_bounce, open, click, spam, unsub, reject. 
-
-```js
-var res = app.endpoints.mandrill.messages.send({
- "message": {
-   "html": "<p>Example HTML content</p>",
-   "text": "Example text content",
-   "subject": "example subject",
-   "from_name": "Example Name",
-   "to": [
-     {
-       "email": "recipient.email@example.com",
-       "name": "Recipient Name",
-       "type": "to"
-     }
-   ]
- }
-}, {
-   "name": 'Object to return'
- }, {
-   "responseArrived": function(res, resData){
-     //... code here
-   },
-   "emailArrived": function(res, resData){
-     //... code here
-   },
-   "emailEvent": function(res, resData){
-     //... code here
-   },
-   "syncEvent": function(res, resData){
-     //... code here
-   }
- });
-```
 
 ### Send email using SLINGR files
 
 When send and email it is possible to send the ID of a file in the SLINGR app and the endpoint will automatically
-read and attach it into Mandrill email:
+read and attach it into Mandrill email.
+
+Otherwise, you can just send a JSON with `type`,`name` & `content` of the file. The content must be Base64 encoded.
 
 ```js
 var res = app.endpoints.mandrill.messages.send({
@@ -219,25 +204,8 @@ var res = app.endpoints.mandrill.messages.send({
      }
    ]
  }
-}, {
-   "name": 'Object to return'
- }, {
-   "responseArrived": function(res, resData){
-     //... code here
-   },
-   "emailArrived": function(res, resData){
-     //... code here
-   },
-   "emailEvent": function(res, resData){
-     //... code here
-   },
-   "syncEvent": function(res, resData){
-     //... code here
-   }
- });
+});
 ```
-
-Where `file_id` is the ID of a file in the SLINGR app and you should send it in attachments files. 
 
 ## About SLINGR
 
