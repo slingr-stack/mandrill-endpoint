@@ -178,7 +178,7 @@ var res = app.endpoints.mandrill.messages.send({
    "from_name": "Example Name",
    "attachments": [
       {
-        "file_id": record.field('file').id()
+        "fileId": record.field('file').id()
       },
       {
         "type": "text/plain",
@@ -188,7 +188,7 @@ var res = app.endpoints.mandrill.messages.send({
     ],
     "images": [
           {
-            "file_id": record.field('image').id()
+            "fileId": record.field('image').id()
           },
           {
             "type": "image/png",

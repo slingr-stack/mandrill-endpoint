@@ -119,14 +119,13 @@ public class MandrillEndpoint extends HttpEndpoint {
 
             Json newAttachments = Json.list();
 
-            for (Object att : message.json(KEY).toList()) {
-                Map attachment = (Map) att;
-                if (attachment.get("file_id") != null) {
+            for (Json attachment : message.jsons(KEY)) {
+                if (attachment.string("fileId") != null) {
 
                     Json newAtt = Json.map();
 
                     try {
-                        String fileId = (String) attachment.get("file_id");
+                        String fileId = attachment.string("fileId");
                         Json descriptor = files().metadata(fileId);
                         if (descriptor != null && !descriptor.isEmpty()) {
                             newAtt.set("type", descriptor.string("contentType"));
@@ -142,7 +141,7 @@ public class MandrillEndpoint extends HttpEndpoint {
                     }
 
                 } else {
-                    newAttachments.push(Json.fromMap(attachment));
+                    newAttachments.push(attachment);
                 }
             }
 
