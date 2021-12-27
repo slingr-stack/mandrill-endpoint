@@ -125,7 +125,11 @@
             "name": "redirectEmail",
             "label": "Redirect To Address",
             "description": "Redirect address used as receiver of all the emails when the redirect option is enabled.",
+            "required": "@config.redirectEnabled",
             "type": "text",
+            "typeOptions": {
+                "validation": "email"
+            },
             "visibility": "config.redirectEnabled && config.redirectEnabled != 'disable'"
         },
         {

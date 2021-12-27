@@ -1,12 +1,3 @@
-endpoint.old = {};
-endpoint.old.sendEmail = function (msg, callbackData, callbacks) {
-    return endpoint._sendEmailOld({msg: msg}, callbackData, callbacks);
-};
-
-endpoint.old.convertEvent = function (event) {
-    return endpoint._convertEvent(event);
-};
-
 endpoint.dates = {};
 endpoint.dates.toMillis = function (stringDate) {
     var json = endpoint._convertDateToTimestamp({date: stringDate});
