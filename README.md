@@ -26,8 +26,10 @@ However, you probably want to use the shortcuts:
 ```js
 var res = app.endpoints.mandrill.users.info();
 ```
-These shortcuts are based on the [Mandrill REST API](https://mandrillapp.com/api/docs/).
 You can see more information about that in the [shortcuts section](#shortcuts).
+
+These shortcuts are based on the [Mandrill REST API](https://mandrillapp.com/api/docs/) and were generated using the [slingr-helpgen](https://github.com/slingr-stack/slingr-helpgen) tool.
+
 
 ## Configuration
 
