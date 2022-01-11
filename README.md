@@ -130,7 +130,6 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 <details>
     <summary>Click here to see all the helpers</summary>
 
-    ```javascript
     /*
     * API URL: '/allowlists/add'
     * HTTP Method: 'POST'
@@ -789,8 +788,6 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 	*/
     app.endpoints.mandrillwhitelists.list(body, callbackData, callbacks);
 
-    
-    ```
 </details>
 
 For more information about how shortcuts work, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
