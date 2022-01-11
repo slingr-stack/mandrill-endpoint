@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+ ////////////////////////////////////////////////////////////////////////////
 //                                                                        //
 //             This file was generated with "slingr-helpgen"              //
 //                                                                        //
@@ -8,108 +8,12 @@
 //                                                                        //
 ////////////////////////////////////////////////////////////////////////////
 
-var urlsData = {
-	"post": {
-		"allowlists.add": "/allowlists/add",
-		"allowlists.list": "/allowlists/list",
-		"allowlists.delete": "/allowlists/delete",
-		"exports.activity": "/exports/activity",
-		"exports.info": "/exports/info",
-		"exports.list": "/exports/list",
-		"exports.rejects": "/exports/rejects",
-		"exports.whitelist": "/exports/whitelist",
-		"inbound.addDomain": "/inbound/add-domain",
-		"inbound.addRoute": "/inbound/add-route",
-		"inbound.checkDomain": "/inbound/check-domain",
-		"inbound.deleteDomain": "/inbound/delete-domain",
-		"inbound.deleteRoute": "/inbound/delete-route",
-		"inbound.domains": "/inbound/domains",
-		"inbound.routes": "/inbound/routes",
-		"inbound.sendRaw": "/inbound/send-raw",
-		"inbound.updateRoute": "/inbound/update-route",
-		"ips.cancelWarmup": "/ips/cancel-warmup",
-		"ips.checkCustomDns": "/ips/check-custom-dns",
-		"ips.createPool": "/ips/create-pool",
-		"ips.delete": "/ips/delete",
-		"ips.deletePool": "/ips/delete-pool",
-		"ips.info": "/ips/info",
-		"ips.list": "/ips/list",
-		"ips.listPools": "/ips/list-pools",
-		"ips.poolInfo": "/ips/pool-info",
-		"ips.provision": "/ips/provision",
-		"ips.setCustomDns": "/ips/set-custom-dns",
-		"ips.setPool": "/ips/set-pool",
-		"ips.startWarmup": "/ips/start-warmup",
-		"messages.cancelScheduled": "/messages/cancel-scheduled",
-		"messages.content": "/messages/content",
-		"messages.info": "/messages/info",
-		"messages.listScheduled": "/messages/list-scheduled",
-		"messages.parse": "/messages/parse",
-		"messages.reschedule": "/messages/reschedule",
-		"messages.search": "/messages/search",
-		"messages.searchTimeSeries": "/messages/search-time-series",
-		"messages.send": "/messages/send",
-		"messages.sendRaw": "/messages/send-raw",
-		"messages.sendTemplate": "/messages/send-template",
-		"metadata.add": "/metadata/add",
-		"metadata.delete": "/metadata/delete",
-		"metadata.list": "/metadata/list",
-		"metadata.update": "/metadata/update",
-		"rejects.add": "/rejects/add",
-		"rejects.delete": "/rejects/delete",
-		"rejects.list": "/rejects/list",
-		"senders.addDomain": "/senders/add-domain",
-		"senders.checkDomain": "/senders/check-domain",
-		"senders.domains": "/senders/domains",
-		"senders.info": "/senders/info",
-		"senders.list": "/senders/list",
-		"senders.timeSeries": "/senders/time-series",
-		"senders.verifyDomain": "/senders/verify-domain",
-		"subaccounts.add": "/subaccounts/add",
-		"subaccounts.delete": "/subaccounts/delete",
-		"subaccounts.info": "/subaccounts/info",
-		"subaccounts.list": "/subaccounts/list",
-		"subaccounts.pause": "/subaccounts/pause",
-		"subaccounts.resume": "/subaccounts/resume",
-		"subaccounts.update": "/subaccounts/update",
-		"tags.allTimeSeries": "/tags/all-time-series",
-		"tags.delete": "/tags/delete",
-		"tags.info": "/tags/info",
-		"tags.list": "/tags/list",
-		"tags.timeSeries": "/tags/time-series",
-		"templates.add": "/templates/add",
-		"templates.delete": "/templates/delete",
-		"templates.info": "/templates/info",
-		"templates.list": "/templates/list",
-		"templates.publish": "/templates/publish",
-		"templates.render": "/templates/render",
-		"templates.timeSeries": "/templates/time-series",
-		"templates.update": "/templates/update",
-		"urls.checkTrackingDomain": "/urls/check-tracking-domain",
-		"urls.list": "/urls/list",
-		"urls.search": "/urls/search",
-		"urls.timeSeries": "/urls/time-series",
-		"urls.trackingDomains": "/urls/tracking-domains",
-		"users.info": "/users/info",
-		"users.ping": "/users/ping",
-		"users.ping2": "/users/ping2",
-		"users.senders": "/users/senders",
-		"webhooks.add": "/webhooks/add",
-		"webhooks.delete": "/webhooks/delete",
-		"webhooks.info": "/webhooks/info",
-		"webhooks.list": "/webhooks/list",
-		"webhooks.update": "/webhooks/update",
-		"whitelists.add": "/whitelists/add",
-		"whitelists.delete": "/whitelists/delete",
-		"whitelists.list": "/whitelists/list"
-	}
-};
 
-var parse = function (str) {
+var parse = function parse(str) {
     try {
         if (arguments.length > 1) {
-            var args = arguments[1], i = 0;
-            return str.replace(/(:(?:\w|-)+)/g, function () {
+            let args = arguments[1], i = 0;
+            return str.replace(/(:(?:\w|-)+)/g, () => {
                 if (typeof (args[i]) != 'string') throw new Error('Invalid type of argument: [' + args[i] + '] for url [' + str + '].');
                 return args[i++];
             });
@@ -128,490 +32,500 @@ var parse = function (str) {
 endpoint.allowlists = {};
 
 endpoint.allowlists.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['allowlists.add']);
+	var url = parse('/allowlists/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.allowlists.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['allowlists.list']);
+	var url = parse('/allowlists/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.allowlists.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['allowlists.delete']);
+	var url = parse('/allowlists/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.exports = {};
 
 endpoint.exports.activity = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['exports.activity']);
+	var url = parse('/exports/activity', );
+	sys.logs.debug('[mandrill] POST from: ' + url);
+	return endpoint.post(url, httpOptions, callbackData, callbacks);
+};
+endpoint.exports.allowlist = function(httpOptions, callbackData, callbacks) {
+	var url = parse('/exports/allowlist', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.exports.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['exports.info']);
+	var url = parse('/exports/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.exports.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['exports.list']);
+	var url = parse('/exports/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.exports.rejects = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['exports.rejects']);
+	var url = parse('/exports/rejects', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.exports.whitelist = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['exports.whitelist']);
+	var url = parse('/exports/whitelist', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound = {};
 
 endpoint.inbound.addDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.addDomain']);
+	var url = parse('/inbound/add-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.addRoute = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.addRoute']);
+	var url = parse('/inbound/add-route', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.checkDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.checkDomain']);
+	var url = parse('/inbound/check-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.deleteDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.deleteDomain']);
+	var url = parse('/inbound/delete-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.deleteRoute = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.deleteRoute']);
+	var url = parse('/inbound/delete-route', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.domains = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.domains']);
+	var url = parse('/inbound/domains', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.routes = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.routes']);
+	var url = parse('/inbound/routes', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.sendRaw = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.sendRaw']);
+	var url = parse('/inbound/send-raw', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.inbound.updateRoute = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['inbound.updateRoute']);
+	var url = parse('/inbound/update-route', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips = {};
 
 endpoint.ips.cancelWarmup = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.cancelWarmup']);
+	var url = parse('/ips/cancel-warmup', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.checkCustomDns = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.checkCustomDns']);
+	var url = parse('/ips/check-custom-dns', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.createPool = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.createPool']);
+	var url = parse('/ips/create-pool', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.delete']);
+	var url = parse('/ips/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.deletePool = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.deletePool']);
+	var url = parse('/ips/delete-pool', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.info']);
+	var url = parse('/ips/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.list']);
+	var url = parse('/ips/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.listPools = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.listPools']);
+	var url = parse('/ips/list-pools', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.poolInfo = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.poolInfo']);
+	var url = parse('/ips/pool-info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.provision = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.provision']);
+	var url = parse('/ips/provision', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.setCustomDns = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.setCustomDns']);
+	var url = parse('/ips/set-custom-dns', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.setPool = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.setPool']);
+	var url = parse('/ips/set-pool', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.ips.startWarmup = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['ips.startWarmup']);
+	var url = parse('/ips/start-warmup', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages = {};
 
 endpoint.messages.cancelScheduled = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.cancelScheduled']);
+	var url = parse('/messages/cancel-scheduled', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.content = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.content']);
+	var url = parse('/messages/content', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.info']);
+	var url = parse('/messages/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.listScheduled = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.listScheduled']);
+	var url = parse('/messages/list-scheduled', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.parse = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.parse']);
+	var url = parse('/messages/parse', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.reschedule = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.reschedule']);
+	var url = parse('/messages/reschedule', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.search = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.search']);
+	var url = parse('/messages/search', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.searchTimeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.searchTimeSeries']);
+	var url = parse('/messages/search-time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.send = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.send']);
+	var url = parse('/messages/send', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.sendRaw = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.sendRaw']);
+	var url = parse('/messages/send-raw', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.messages.sendTemplate = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['messages.sendTemplate']);
+	var url = parse('/messages/send-template', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.metadata = {};
 
 endpoint.metadata.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['metadata.add']);
+	var url = parse('/metadata/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.metadata.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['metadata.delete']);
+	var url = parse('/metadata/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.metadata.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['metadata.list']);
+	var url = parse('/metadata/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.metadata.update = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['metadata.update']);
+	var url = parse('/metadata/update', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.rejects = {};
 
 endpoint.rejects.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['rejects.add']);
+	var url = parse('/rejects/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.rejects.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['rejects.delete']);
+	var url = parse('/rejects/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.rejects.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['rejects.list']);
+	var url = parse('/rejects/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders = {};
 
 endpoint.senders.addDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.addDomain']);
+	var url = parse('/senders/add-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.checkDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.checkDomain']);
+	var url = parse('/senders/check-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.domains = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.domains']);
+	var url = parse('/senders/domains', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.info']);
+	var url = parse('/senders/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.list']);
+	var url = parse('/senders/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.timeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.timeSeries']);
+	var url = parse('/senders/time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.senders.verifyDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['senders.verifyDomain']);
+	var url = parse('/senders/verify-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts = {};
 
 endpoint.subaccounts.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.add']);
+	var url = parse('/subaccounts/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.delete']);
+	var url = parse('/subaccounts/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.info']);
+	var url = parse('/subaccounts/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.list']);
+	var url = parse('/subaccounts/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.pause = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.pause']);
+	var url = parse('/subaccounts/pause', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.resume = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.resume']);
+	var url = parse('/subaccounts/resume', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.subaccounts.update = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['subaccounts.update']);
+	var url = parse('/subaccounts/update', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.tags = {};
 
 endpoint.tags.allTimeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['tags.allTimeSeries']);
+	var url = parse('/tags/all-time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.tags.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['tags.delete']);
+	var url = parse('/tags/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.tags.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['tags.info']);
+	var url = parse('/tags/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.tags.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['tags.list']);
+	var url = parse('/tags/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.tags.timeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['tags.timeSeries']);
+	var url = parse('/tags/time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates = {};
 
 endpoint.templates.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.add']);
+	var url = parse('/templates/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.delete']);
+	var url = parse('/templates/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.info']);
+	var url = parse('/templates/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.list']);
+	var url = parse('/templates/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.publish = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.publish']);
+	var url = parse('/templates/publish', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.render = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.render']);
+	var url = parse('/templates/render', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.timeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.timeSeries']);
+	var url = parse('/templates/time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.templates.update = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['templates.update']);
+	var url = parse('/templates/update', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.urls = {};
 
 endpoint.urls.checkTrackingDomain = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['urls.checkTrackingDomain']);
+	var url = parse('/urls/check-tracking-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.urls.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['urls.list']);
+	var url = parse('/urls/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.urls.search = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['urls.search']);
+	var url = parse('/urls/search', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.urls.timeSeries = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['urls.timeSeries']);
+	var url = parse('/urls/time-series', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.urls.trackingDomains = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['urls.trackingDomains']);
+	var url = parse('/urls/tracking-domains', );
+	sys.logs.debug('[mandrill] POST from: ' + url);
+	return endpoint.post(url, httpOptions, callbackData, callbacks);
+};
+endpoint.urls.addTrackingDomain = function(httpOptions, callbackData, callbacks) {
+	var url = parse('/urls/add-tracking-domain', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.users = {};
 
 endpoint.users.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['users.info']);
+	var url = parse('/users/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.users.ping = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['users.ping']);
+	var url = parse('/users/ping', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.users.ping2 = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['users.ping2']);
+	var url = parse('/users/ping2', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.users.senders = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['users.senders']);
+	var url = parse('/users/senders', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.webhooks = {};
 
 endpoint.webhooks.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['webhooks.add']);
+	var url = parse('/webhooks/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.webhooks.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['webhooks.delete']);
+	var url = parse('/webhooks/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.webhooks.info = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['webhooks.info']);
+	var url = parse('/webhooks/info', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.webhooks.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['webhooks.list']);
+	var url = parse('/webhooks/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.webhooks.update = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['webhooks.update']);
+	var url = parse('/webhooks/update', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.whitelists = {};
 
 endpoint.whitelists.add = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['whitelists.add']);
+	var url = parse('/whitelists/add', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.whitelists.delete = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['whitelists.delete']);
+	var url = parse('/whitelists/delete', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };
 endpoint.whitelists.list = function(httpOptions, callbackData, callbacks) {
-	var url = parse(urlsData['post']['whitelists.list']);
+	var url = parse('/whitelists/list', );
 	sys.logs.debug('[mandrill] POST from: ' + url);
 	return endpoint.post(url, httpOptions, callbackData, callbacks);
 };

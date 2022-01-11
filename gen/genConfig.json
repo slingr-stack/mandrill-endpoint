@@ -7,644 +7,752 @@
             "suffix": "",
             "method": "POST",
             "url": "/allowlists/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/allowlists/add-email-to-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/allowlists/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/allowlists/list-allowlisted-emails/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/allowlists/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/allowlists/remove-email-from-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/exports/activity",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/export-activity-history/"
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/exports/allowlist",
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/export-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/exports/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/view-export-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/exports/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/list-exports/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/exports/rejects",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/export-denylist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/exports/whitelist",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/exports/export-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/add-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/add-inbound-domain/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/add-route",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/add-mailbox-route/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/check-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/check-domain-settings/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/delete-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/delete-inbound-domain/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/delete-route",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/delete-mailbox-route/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/domains",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/list-inbound-domains/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/routes",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/list-mailbox-routes/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/send-raw",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/send-mime-document/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/inbound/update-route",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/inbound/update-mailbox-route/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/cancel-warmup",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/cancel-ip-warmup/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/check-custom-dns",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/test-custom-dns/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/create-pool",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/add-ip-pool/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/delete-ip-address/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/delete-pool",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/delete-ip-pool/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/get-ip-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/list-ip-addresses/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/list-pools",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/list-ip-pools/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/pool-info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/get-ip-pool-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/provision",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/request-additional-ip/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/set-custom-dns",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/set-custom-dns/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/set-pool",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/move-ip-to-different-pool/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/ips/start-warmup",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/ips/start-ip-warmup/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/cancel-scheduled",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/cancel-scheduled-email/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/content",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/get-message-content/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/get-message-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/list-scheduled",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/list-scheduled-emails/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/parse",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/parse-mime-document/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/reschedule",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/reschedule-email/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/search",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/search-messages-by-date/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/search-time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/search-messages-by-hour/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/send",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/send-new-message/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/send-raw",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/send-mime-document/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/messages/send-template",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/messages/send-using-message-template/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/metadata/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/metadata/add-metadata-field/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/metadata/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/metadata/delete-metadata-field/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/metadata/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/metadata/list-metadata-fields/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/metadata/update",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/metadata/update-metadata-field/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/rejects/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/rejects/add-email-to-denylist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/rejects/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/rejects/delete-email-from-denylist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/rejects/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/rejects/list-denylisted-emails/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/add-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/add-sender-domain/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/check-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/check-domain-settings/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/domains",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/list-sender-domains/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/get-sender-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/list-account-senders/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/view-sender-history/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/senders/verify-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/senders/verify-domain/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/add-subaccount/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/delete-subaccount/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/get-subaccount-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/list-subaccounts/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/pause",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/pause-subaccount/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/resume",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/resume-subaccount/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/subaccounts/update",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/subaccounts/update-subaccount/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/tags/all-time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/tags/view-all-tags-history/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/tags/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/tags/delete-tag/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/tags/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/tags/get-tag-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/tags/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/tags/list-tags/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/tags/time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/tags/view-tag-history/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/add-template/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/delete-template/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/get-template-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/list-templates/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/publish",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/publish-template-content/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/render",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/render-html-template/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/get-template-history/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/templates/update",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/templates/update-template/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/urls/check-tracking-domain",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/check-cname-settings/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/urls/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/list-most-clicked-urls/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/urls/search",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/search-most-clicked-urls/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/urls/time-series",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/get-url-history/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/urls/tracking-domains",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/list-tracking-domains/"
+        },
+        {
+            "prefix": "",
+            "suffix": "",
+            "method": "POST",
+            "url": "/urls/add-tracking-domain",
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/urls/add-tracking-domains/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/users/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/users/get-user-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/users/ping",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/users/ping/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/users/ping2",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/users/ping-2/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/users/senders",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/users/list-account-senders/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/webhooks/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/webhooks/add-webhook/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/webhooks/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/webhooks/delete-webhook/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/webhooks/info",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/webhooks/get-webhook-info/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/webhooks/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/webhooks/list-webhooks/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/webhooks/update",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/webhooks/update-webhook/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/whitelists/add",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/whitelists/add-email-to-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/whitelists/delete",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/whitelists/remove-email-from-allowlist/"
         },
         {
             "prefix": "",
             "suffix": "",
             "method": "POST",
             "url": "/whitelists/list",
-            "acceptsCallbacks": true
+            "acceptsCallbacks": true,
+            "docsLink": "https://mailchimp.com/developer/transactional/api/whitelists/list-allowlisted-emails/"
         }
     ]
 }
