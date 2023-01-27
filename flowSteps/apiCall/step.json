@@ -1,0 +1,449 @@
+{
+  "label": "API call",
+  "name": "apiCall",
+  "category": "integrations",
+  "description": "This flow step will send generic request",
+  "inputs": [
+    {
+      "label": "Url",
+      "name": "url",
+      "description": "The method and path to which this endpoint will send the request.",
+      "type": "urlParams",
+      "required": "false",
+      "options": {
+        "type": "dropDown",
+        "possibleValues": {
+          "post": [
+            {
+              "label": "/users/info"
+            },
+            {
+              "label": "/users/ping"
+            },
+            {
+              "label": "/users/ping2"
+            },
+            {
+              "label": "/users/senders"
+            },
+            {
+              "label": "/messages/send"
+            },
+            {
+              "label": "/messages/send-template"
+            },
+            {
+              "label": "/messages/search"
+            },
+            {
+              "label": "/messages/search-time-series"
+            },
+            {
+              "label": "/messages/info"
+            },
+            {
+              "label": "/messages/content"
+            },
+            {
+              "label": "/messages/parse"
+            },
+            {
+              "label": "/messages/send-raw"
+            },
+            {
+              "label": "/messages/list-scheduled"
+            },
+            {
+              "label": "/messages/cancel-scheduled"
+            },
+            {
+              "label": "/messages/reschedule"
+            },
+            {
+              "label": "/tags/list"
+            },
+            {
+              "label": "/tags/delete"
+            },
+            {
+              "label": "/tags/info"
+            },
+            {
+              "label": "/tags/time-series"
+            },
+            {
+              "label": "/tags/all-time-series"
+            },
+            {
+              "label": "/rejects/add"
+            },
+            {
+              "label": "/rejects/list"
+            },
+            {
+              "label": "/rejects/delete"
+            },
+            {
+              "label": "/whitelists/add"
+            },
+            {
+              "label": "/whitelists/list"
+            },
+            {
+              "label": "/whitelists/delete"
+            },
+            {
+              "label": "/senders/list"
+            },
+            {
+              "label": "/senders/domains"
+            },
+            {
+              "label": "/senders/add-domain"
+            },
+            {
+              "label": "/senders/check-domain"
+            },
+            {
+              "label": "/senders/verify-domain"
+            },
+            {
+              "label": "/senders/info"
+            },
+            {
+              "label": "/senders/time-series"
+            },
+            {
+              "label": "/urls/list"
+            },
+            {
+              "label": "/urls/search"
+            },
+            {
+              "label": "/urls/time-series"
+            },
+            {
+              "label": "/urls/tracking-domains"
+            },
+            {
+              "label": "/urls/check-tracking-domain"
+            },
+            {
+              "label": "/templates/add"
+            },
+            {
+              "label": "/templates/info"
+            },
+            {
+              "label": "/templates/update"
+            },
+            {
+              "label": "/templates/publish"
+            },
+            {
+              "label": "/templates/delete"
+            },
+            {
+              "label": "/templates/list"
+            },
+            {
+              "label": "/templates/time-series"
+            },
+            {
+              "label": "/templates/render"
+            },
+            {
+              "label": "/webhooks/list"
+            },
+            {
+              "label": "/webhooks/add"
+            },
+            {
+              "label": "/webhooks/info"
+            },
+            {
+              "label": "/webhooks/update"
+            },
+            {
+              "label": "/webhooks/delete"
+            },
+            {
+              "label": "/subaccounts/list"
+            },
+            {
+              "label": "/subaccounts/add"
+            },
+            {
+              "label": "/subaccounts/info"
+            },
+            {
+              "label": "/subaccounts/update"
+            },
+            {
+              "label": "/subaccounts/delete"
+            },
+            {
+              "label": "/subaccounts/pause"
+            },
+            {
+              "label": "/subaccounts/resume"
+            },
+            {
+              "label": "/inbound/domains"
+            },
+            {
+              "label": "/inbound/add-domain"
+            },
+            {
+              "label": "/inbound/check-domain"
+            },
+            {
+              "label": "/inbound/delete-domain"
+            },
+            {
+              "label": "/inbound/routes"
+            },
+            {
+              "label": "/inbound/add-route"
+            },
+            {
+              "label": "/inbound/update-route"
+            },
+            {
+              "label": "/inbound/delete-route"
+            },
+            {
+              "label": "/inbound/send-raw"
+            },
+            {
+              "label": "/exports/info"
+            },
+            {
+              "label": "/exports/list"
+            },
+            {
+              "label": "/exports/rejects"
+            },
+            {
+              "label": "/exports/whitelist"
+            },
+            {
+              "label": "/exports/activity"
+            },
+            {
+              "label": "/ips/list"
+            },
+            {
+              "label": "/ips/info"
+            },
+            {
+              "label": "/ips/provision"
+            },
+            {
+              "label": "/ips/start-warmup"
+            },
+            {
+              "label": "/ips/cancel-warmup"
+            },
+            {
+              "label": "/ips/set-pool"
+            },
+            {
+              "label": "/ips/delete"
+            },
+            {
+              "label": "/ips/list-pools"
+            },
+            {
+              "label": "/ips/pool-info"
+            },
+            {
+              "label": "/ips/create-pool"
+            },
+            {
+              "label": "/ips/delete-pool"
+            },
+            {
+              "label": "/ips/check-custom-dns"
+            },
+            {
+              "label": "/ips/set-custom-dns"
+            },
+            {
+              "label": "/metadata/list"
+            },
+            {
+              "label": "/metadata/add"
+            },
+            {
+              "label": "/metadata/update"
+            },
+            {
+              "label": "/metadata/delete"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "Headers",
+      "name": "headers",
+      "description": "The headers have the 'key=value' form, per example: key=ABC123",
+      "type": "keyValue"
+    },
+    {
+      "label": "Params",
+      "name": "params",
+      "description": "The params have the 'key=value' form, per example: key=ABC123",
+      "type": "keyValue"
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "type": "json",
+      "required": "['post', 'put', 'patch'].includes(config.method)",
+      "visibility": "['post', 'put', 'patch'].includes(config.method)",
+      "description": "This is used to set body request",
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Event",
+      "name": "events",
+      "type": "dropDown",
+      "description": "Select event",
+      "multiplicity": "one",
+      "options": {
+        "possibleValues": [
+          {
+            "label": "File Downloaded",
+            "name": "fileDownloaded"
+          },
+          {
+            "label": "Callback",
+            "name": "callback"
+          }
+        ],
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Callback Data",
+      "name": "callbackData",
+      "type": "text",
+      "description": "This is an object you can send that you will get back when the function is processed",
+      "visibility": "config.events",
+      "options": {
+        "representation": "textArea",
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Callbacks",
+      "name": "callbacks",
+      "type": "script",
+      "description": "This is a map where you can listener for different function",
+      "visibility": "config.events",
+      "options": {
+        "allowContextSelector": "false",
+        "parameters": ["event","callbackData"]
+      }
+    },
+    {
+      "label": "Override Settings",
+      "name": "overrideSettings",
+      "type": "boolean",
+      "description": "If true, allows adding configurations",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Follow Redirects",
+      "name": "followRedirects",
+      "type": "boolean",
+      "description": "Follow the redirects when a HTTP request is executed",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Download",
+      "name": "download",
+      "type": "boolean",
+      "description": "Indicates that the resource has to be downloaded into a file instead of returning it in the response.",
+      "visibility": "config.overrideSettings && config.events != \"fileDownloaded\"",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "File Name",
+      "name": "fileName",
+      "description": "If provided, the file will be stored with this name. If empty the file name will be calculated from the URL.",
+      "visibility": "(config.overrideSettings && config.download) || config.events === \"fileDownloaded\"",
+      "type": "text",
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Full Response",
+      "name": "fullResponse",
+      "type": "boolean",
+      "description": "Include extended information about response",
+      "visibility": "config.overrideSettings",
+      "defaultValue": false,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Connection timeout",
+      "name": "connectionTimeout",
+      "description": "Connect timeout interval, in milliseconds (0 = infinity). Default value: 5000 ms (5 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "5000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.connectionTimeout || utils.isPlaceholder(config.connectionTimeout) || utils.getInteger(config.connectionTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Read timeout",
+      "name": "readTimeout",
+      "description": "Read timeout interval, in milliseconds (0 = infinity). Default value: 60000 ms (60 sec)",
+      "visibility": "config.overrideSettings",
+      "type": "text",
+      "defaultValue": "60000",
+      "typeOptions": {
+        "validation": {
+          "function": "!config.readTimeout || utils.isPlaceholder(config.readTimeout) || utils.getInteger(config.readTimeout) >= 0",
+          "message": "The time must be a valid placeholder or a positive integer greater than or equal to 0. "
+        }
+      },
+      "options": {
+        "allowContextSelector": "false"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}
