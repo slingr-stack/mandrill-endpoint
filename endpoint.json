@@ -135,7 +135,7 @@
         }
     ],
     "scripts": [
-        "functions.js",
+        "functions.js"
     ],
     "configuration":[
         {
