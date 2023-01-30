@@ -43,7 +43,7 @@ step.apiCall = function (stepConfig) {
 		defaultCallback: !!stepConfig.inputs.events
 	}
 
-	switch (stepConfig.inputs.url.method.toLowerCase()) {
+	switch (stepConfig.inputs.method) {
 		case 'get':
 			return endpoint._get(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
 		case 'post':

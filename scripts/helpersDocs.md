@@ -9,7 +9,7 @@ The Javascript API of the mandrill endpoint has three pieces:
 ## HTTP requests
 You can make `POST` requests to the [mandrill API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.mandrill.post('/messages/send-raw', body)
+var response = app.endpoints.mandrill.post('/inbound/check-domain', body)
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
