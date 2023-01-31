@@ -33,8 +33,6 @@ step.sendEmail = function (stepConfig) {
 		}
 	};
 
-	sys.logs.debug('[mandrill] POST from: ' + url);
-
 	return endpoint._sendEmailOld({msg: msg}, callbackData, callbacks)
 
 };
