@@ -1,0 +1,54 @@
+{
+  "label": "API call",
+  "name": "sendEmail",
+  "category": "integrations",
+  "description": "This flow step will send generic request",
+  "inputs": [
+    {
+      "label": "From",
+      "name": "from",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "To",
+      "name": "to",
+      "type": "text",
+      "required": true,
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Subject",
+      "name": "subject",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Message",
+      "name": "message",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "false",
+        "representation": "textArea"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}
