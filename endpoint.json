@@ -137,6 +137,10 @@
     "scripts": [
         "functions.js"
     ],
+    "flowSteps":  [
+        "apiCall",
+        "sendEmail"
+    ],
     "configuration":[
         {
             "name": "apiKey",
