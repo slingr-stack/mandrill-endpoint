@@ -19,7 +19,7 @@
  */
 step.sendEmail = function (stepConfig) {
 
-	var msj = {
+	var msg = {
 		"message": {
 			"from_name": stepConfig.inputs.from,
 			"subject": stepConfig.inputs.subject,
