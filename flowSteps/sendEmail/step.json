@@ -10,7 +10,7 @@
       "type": "text",
       "required": true,
       "options": {
-        "allowContextSelector": "false"
+        "allowContextSelector": "true"
       }
     },
     {
@@ -20,7 +20,7 @@
       "required": true,
       "options": {
         "validation": "email",
-        "allowContextSelector": "false"
+        "allowContextSelector": "true"
       }
     },
     {
@@ -29,7 +29,7 @@
       "type": "text",
       "required": true,
       "options": {
-        "allowContextSelector": "false"
+        "allowContextSelector": "true"
       }
     },
     {
@@ -38,7 +38,7 @@
       "type": "text",
       "required": true,
       "options": {
-        "allowContextSelector": "false",
+        "allowContextSelector": "true",
         "representation": "textArea"
       }
     },
@@ -85,10 +85,7 @@
       "visibility": "config.events",
       "options": {
         "allowContextSelector": "false",
-        "parameters": [
-          "event",
-          "callbackData"
-        ]
+        "parameters": ["event","callbackData"]
       }
     }
   ],
