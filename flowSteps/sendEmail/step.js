@@ -19,6 +19,11 @@
  */
 step.sendEmail = function (stepConfig) {
 
+	stepConfig.inputs.callbacks = stepConfig.inputs.callbacks ?
+		eval("stepConfig.inputs.callbacks = {" + stepConfig.inputs.events + " : function(event, callbackData) {" + stepConfig.inputs.callbacks + "}}") : stepConfig.inputs.callbacks;
+
+	stepConfig.inputs.callbackData = stepConfig.inputs.callbackData ? {record:stepConfig.inputs.callbackData} : stepConfig.inputs.callbackData;
+
 	var msg = {
 		"message": {
 			"from_name": stepConfig.inputs.from,
@@ -33,7 +38,13 @@ step.sendEmail = function (stepConfig) {
 		}
 	};
 
-	return app.endpoints.mandrill.messages.send.post(msg)
+	var options = {
+		path: "/messages/send",
+		body: msg,
+		defaultCallback: !!stepConfig.inputs.events
+	}
+
+	return endpoint._post(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
 
 };
 
