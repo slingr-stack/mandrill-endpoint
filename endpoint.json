@@ -53,6 +53,11 @@
             "links":[
                 "https://mandrill.zendesk.com/hc/en-us/articles/205583297-Sync-Event-Webhook-format"
             ]
+        },
+        {
+            "label": "Callback",
+            "name": "callback",
+            "description": "Happens when a async process is finished"
         }
     ],
     "functions": [
@@ -71,6 +76,9 @@
                 },
                 {
                     "name": "syncEvent"
+                },
+                {
+                    "name": "callback"
                 }
             ]
         },
@@ -83,29 +91,55 @@
                 },
                 {
                     "name": "emailEvent"
+                },
+                {
+                    "name": "callback"
                 }
             ]
         },
         {
             "label": "Convert date to time",
-            "name": "_convertDateToTimestamp"
+            "name": "_convertDateToTimestamp",
+            "callbacks": [
+                {
+                    "name": "callback"
+                }
+            ]
         },
         {
             "label": "Format from milliseconds",
-            "name": "_formatFromMillis"
+            "name": "_formatFromMillis",
+            "callbacks": [
+            {
+                "name": "callback"
+            }
+        ]
         },
         {
             "label": "Convert old event",
-            "name": "_convertEvent"
+            "name": "_convertEvent",
+            "callbacks": [
+                {
+                    "name": "callback"
+                }
+            ]
         },
         {
             "label": "Get resource by id",
-            "name": "_getResourceById"
+            "name": "_getResourceById",
+            "callbacks": [
+                {
+                    "name": "callback"
+                }
+            ]
         }
     ],
     "scripts": [
-        "functions.js",
-        "mandrill-fn-helpers.js"
+        "functions.js"
+    ],
+    "flowSteps":  [
+        "apiCall",
+        "sendEmail"
     ],
     "configuration":[
         {

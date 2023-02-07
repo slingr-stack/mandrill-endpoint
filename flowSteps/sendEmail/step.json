@@ -1,0 +1,100 @@
+{
+  "label": "Send Email",
+  "name": "sendEmail",
+  "category": "integrations",
+  "description": "This flow step will send generic request",
+  "inputs": [
+    {
+      "label": "From",
+      "name": "from",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "To",
+      "name": "to",
+      "type": "text",
+      "required": true,
+      "options": {
+        "validation": "email",
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Subject",
+      "name": "subject",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Message",
+      "name": "message",
+      "type": "text",
+      "required": true,
+      "options": {
+        "allowContextSelector": "true",
+        "representation": "textArea"
+      }
+    },
+    {
+      "label": "Event",
+      "name": "events",
+      "type": "dropDown",
+      "description": "Select event",
+      "multiplicity": "one",
+      "options": {
+        "possibleValues": [
+          {
+            "label": "Response Arrived",
+            "name": "responseArrived"
+          },
+          {
+            "label": "Email Event",
+            "name": "emailEvent"
+          },
+          {
+            "label": "Callback",
+            "name": "callback"
+          }
+        ],
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Callback Data",
+      "name": "callbackData",
+      "type": "text",
+      "description": "This is an object you can send that you will get back when the function is processed",
+      "visibility": "config.events",
+      "options": {
+        "representation": "textArea",
+        "allowContextSelector": "true"
+      }
+    },
+    {
+      "label": "Callbacks",
+      "name": "callbacks",
+      "type": "script",
+      "description": "This is a map where you can listener for different function",
+      "visibility": "config.events",
+      "options": {
+        "allowContextSelector": "false",
+        "parameters": ["event","callbackData"]
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "label": "Response",
+      "name": "response",
+      "type": "object",
+      "description": "The response to external URL"
+    }
+  ]
+}
