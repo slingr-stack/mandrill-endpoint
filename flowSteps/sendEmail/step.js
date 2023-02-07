@@ -19,19 +19,31 @@
  */
 step.sendEmail = function (stepConfig) {
 
-	stepConfig.inputs.callbacks = stepConfig.inputs.callbacks ?
-		eval("stepConfig.inputs.callbacks = {" + stepConfig.inputs.events + " : function(event, callbackData) {" + stepConfig.inputs.callbacks + "}}") : stepConfig.inputs.callbacks;
+	var inputs = {
+		callbackData: stepConfig.inputs.callbackData || "",
+		callbacks: stepConfig.inputs.callbacks || "",
+		events: stepConfig.inputs.events || "",
+		from: stepConfig.inputs.from || "",
+		subject: stepConfig.inputs.subject || "",
+		message: stepConfig.inputs.message || "",
+		to: stepConfig.inputs.to || "",
 
-	stepConfig.inputs.callbackData = stepConfig.inputs.callbackData ? {record:stepConfig.inputs.callbackData} : stepConfig.inputs.callbackData;
+	};
+
+	inputs.callbacks = inputs.callbacks ?
+		eval("inputs.callbacks = {" + inputs.events + " : function(event, callbackData) {" + inputs.callbacks + "}}") :
+		inputs.callbacks;
+
+	inputs.callbackData = inputs.callbackData ? {record: inputs.callbackData} : inputs.callbackData;
 
 	var msg = {
 		"message": {
-			"from_name": stepConfig.inputs.from,
-			"subject": stepConfig.inputs.subject,
-			"html": stepConfig.inputs.message,
+			"from_name": inputs.from,
+			"subject": inputs.subject,
+			"html": inputs.message,
 			"to": [
 				{
-					"email": stepConfig.inputs.to,
+					"email": inputs.to,
 					"type": "to"
 				}
 			]
@@ -41,10 +53,10 @@ step.sendEmail = function (stepConfig) {
 	var options = {
 		path: "/messages/send",
 		body: msg,
-		defaultCallback: !!stepConfig.inputs.events
+		defaultCallback: !!inputs.events
 	}
 
-	return endpoint._post(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+	return endpoint._post(options, inputs.callbackData, inputs.callbacks);
 
 };
 
