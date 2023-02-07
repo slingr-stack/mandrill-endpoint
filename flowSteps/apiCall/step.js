@@ -16,56 +16,78 @@
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  * @param {object} stepConfig.context {object} context
+ * @param {object} stepConfig.output {object} output
  */
 step.apiCall = function (stepConfig) {
 
-	var headers = isObject(stepConfig.inputs.headers) ? stepConfig.inputs.headers : stringToObject(stepConfig.inputs.headers)
-	var params = isObject(stepConfig.inputs.params) ? stepConfig.inputs.params : stringToObject(stepConfig.inputs.params)
-	var body = isObject(stepConfig.inputs.body) ? stepConfig.inputs.body : JSON.parse(stepConfig.inputs.body);
+	var inputs = {
+		headers: stepConfig.inputs.headers || [],
+		params: stepConfig.inputs.params || [],
+		body: stepConfig.inputs.body || {},
+		callbackData: stepConfig.inputs.callbackData || "",
+		callbacks: stepConfig.inputs.callbacks || "",
+		followRedirects: stepConfig.inputs.followRedirects || false,
+		download: stepConfig.inputs.download || false,
+		fileName: stepConfig.inputs.fileName || "",
+		fullResponse: stepConfig.inputs.fullResponse || false,
+		connectionTimeout: stepConfig.inputs.connectionTimeout || 5000,
+		readTimeout: stepConfig.inputs.readTimeout || 60000,
+		events: stepConfig.inputs.events || "",
+		url: stepConfig.inputs.url || {
+			urlValue: "",
+			paramsValue: [],
+			method: ""
+		},
+		action: stepConfig.inputs.action || ""
+	};
 
-	stepConfig.inputs.callbacks = stepConfig.inputs.callbacks ?
-		eval("stepConfig.inputs.callbacks = {" + stepConfig.inputs.events + " : function(event, callbackData) {" + stepConfig.inputs.callbacks + "}}") : stepConfig.inputs.callbacks;
+	inputs.headers = isObject(inputs.headers) ? inputs.headers : stringToObject(inputs.headers);
+	inputs.params = isObject(inputs.params) ? inputs.params : stringToObject(inputs.params);
+	inputs.body = isObject(inputs.body) ? inputs.body : JSON.parse(inputs.body);
 
-	stepConfig.inputs.callbackData = stepConfig.inputs.callbackData ? {record:stepConfig.inputs.callbackData} : stepConfig.inputs.callbackData;
+	inputs.callbacks = inputs.callbacks ?
+		eval("inputs.callbacks = {" + inputs.events + " : function(event, callbackData) {" + inputs.callbacks + "}}") :
+		inputs.callbacks;
+
+	inputs.callbackData = inputs.callbackData ? {record: inputs.callbackData} : inputs.callbackData;
 
 	var options = {
-		path: parse(stepConfig.inputs.url.urlValue, stepConfig.inputs.url.paramsValue),
-		params:params,
-		headers:headers,
-		body: body,
-		followRedirects : stepConfig.inputs.followRedirects,
-		forceDownload : stepConfig.inputs.events === "fileDownloaded" ? true : stepConfig.inputs.download,
-		downloadSync : stepConfig.inputs.events === "fileDownloaded" ? false : stepConfig.inputs.download,
-		fileName: stepConfig.inputs.fileName,
-		fullResponse : stepConfig.inputs.fullResponse,
-		connectionTimeout: stepConfig.inputs.connectionTimeout,
-		readTimeout: stepConfig.inputs.readTimeout,
-		defaultCallback: !!stepConfig.inputs.events
-	}
+		path: parse(inputs.url.urlValue, inputs.url.paramsValue),
+		params: inputs.params,
+		headers: inputs.headers,
+		body: inputs.body,
+		followRedirects : inputs.followRedirects,
+		forceDownload : inputs.events === "fileDownloaded" ? true : inputs.download,
+		downloadSync : inputs.events === "fileDownloaded" ? false : inputs.download,
+		fileName: inputs.fileName,
+		fullResponse : inputs.fullResponse,
+		connectionTimeout: inputs.connectionTimeout,
+		readTimeout: inputs.readTimeout,
+		defaultCallback: !!inputs.events
+	};
 
-	switch (stepConfig.inputs.url.method.toLowerCase()) {
+	switch (inputs.url.method.toLowerCase()) {
 		case 'get':
-			return endpoint._get(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._get(options, inputs.callbackData, inputs.callbacks);
 		case 'post':
-			return endpoint._post(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._post(options, inputs.callbackData, inputs.callbacks);
 		case 'delete':
-			return endpoint._delete(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._delete(options, inputs.callbackData, inputs.callbacks);
 		case 'put':
-			return endpoint._put(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._put(options, inputs.callbackData, inputs.callbacks);
 		case 'connect':
-			return endpoint._connect(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._connect(options, inputs.callbackData, inputs.callbacks);
 		case 'head':
-			return endpoint._head(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._head(options, inputs.callbackData, inputs.callbacks);
 		case 'options':
-			return endpoint._options(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._options(options, inputs.callbackData, inputs.callbacks);
 		case 'patch':
-			return endpoint._patch(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
+			return endpoint._patch(options, inputs.callbackData, inputs.callbacks);
 		case 'trace':
-			return endpoint._trace(options, stepConfig.inputs.callbackData, stepConfig.inputs.callbacks);
-		default:
-			return null;
+			return endpoint._trace(options, inputs.callbackData, inputs.callbacks);
 	}
 
+	return null;
 };
 
 var parse = function (url, pathVariables){
