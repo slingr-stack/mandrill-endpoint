@@ -1,7 +1,7 @@
 /**
  * This flow step will send generic request.
  *
- * @param {object} stepConfig.inputs
+ * @param {object} inputs
  * {text} method, This is used to config method.
  * {text} url, This is used to config external URL.
  * {Array[string]} pathVariables, This is used to config path variables.
@@ -15,18 +15,16 @@
  * {boolean} fullResponse, This is used to config full response.
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
- * @param {object} stepConfig.context {object} context
  */
-step.sendEmail = function (stepConfig) {
-
+step.sendEmail = function (inputs) {
 	var inputs = {
-		callbackData: stepConfig.inputs.callbackData || "",
-		callbacks: stepConfig.inputs.callbacks || "",
-		events: stepConfig.inputs.events || "",
-		from: stepConfig.inputs.from || "",
-		subject: stepConfig.inputs.subject || "",
-		message: stepConfig.inputs.message || "",
-		to: stepConfig.inputs.to || "",
+		callbackData: inputs.callbackData || "",
+		callbacks: inputs.callbacks || "",
+		events: inputs.events || "",
+		from: inputs.from || "",
+		subject: inputs.subject || "",
+		message: inputs.message || "",
+		to: inputs.to || "",
 
 	};
 
