@@ -1,6 +1,6 @@
 {
-  "label": "Send Email Mandrill",
-  "name": "sendEmailMandrill",
+  "label": "Send Email",
+  "name": "sendEmail",
   "category": "integrations",
   "description": "This flow step will send generic request",
   "inputs": [

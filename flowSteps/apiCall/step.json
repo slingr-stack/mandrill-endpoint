@@ -1,6 +1,6 @@
 {
-  "label": "API call to mandrill",
-  "name": "apiCallMandrill",
+  "label": "API call",
+  "name": "apiCall",
   "category": "integrations",
   "description": "This flow step will send generic request",
   "inputs": [
