@@ -138,8 +138,8 @@
         "functions.js"
     ],
     "flowSteps":  [
-        "apiCall",
-        "sendEmail"
+        "apiCallMandrill",
+        "sendEmailMandrill"
     ],
     "configuration":[
         {

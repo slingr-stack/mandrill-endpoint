@@ -16,7 +16,7 @@
  * {number} connectionTimeout, Read timeout interval, in milliseconds.
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  */
-step.sendEmail = function (inputs) {
+step.sendEmailMandrill = function (inputs) {
 	var inputs = {
 		callbackData: inputs.callbackData || "",
 		callbacks: inputs.callbacks || "",
