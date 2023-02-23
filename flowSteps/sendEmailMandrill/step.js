@@ -23,6 +23,11 @@ step.sendEmailMandrill = function (inputs) {
 		subject: inputs.subject || "",
 		message: inputs.message || "",
 		to: inputs.to || "",
+		attachFile:{
+			fileId : inputs.attachFile.fileId || "",
+			type: inputs.attachFile.type || "",
+			name: inputs.attachFile.fileName || ""
+		}
 
 	};
 
@@ -31,6 +36,15 @@ step.sendEmailMandrill = function (inputs) {
 			"from_name": inputs.from,
 			"subject": inputs.subject,
 			"html": inputs.message,
+			"attachments": [
+				{
+					"file_id": inputs.attachFile.fileId
+				},
+				{
+					"type": inputs.attachFile.type,
+					"name": inputs.attachFile.fileName
+				}
+			],
 			"to": [
 				{
 					"email": inputs.to,
