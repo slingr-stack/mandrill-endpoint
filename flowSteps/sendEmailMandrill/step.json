@@ -41,14 +41,6 @@
         "allowContextSelector": "true",
         "representation": "textArea"
       }
-    },
-    {
-      "label": "Attach file",
-      "name": "attachFile",
-      "type": "fileUploader",
-      "description": "The dynamic object to be set as a variable.",
-      "visibility": true,
-      "required": false
     }
   ],
   "outputs": [
