@@ -17,22 +17,14 @@
  * {number} readTimeout, Connect timeout interval, in milliseconds.
  */
 step.sendEmailMandrill = function (inputs) {
+
 	var inputs = {
-		callbackData: inputs.callbackData || "",
-		callbacks: inputs.callbacks || "",
-		events: inputs.events || "",
 		from: inputs.from || "",
 		subject: inputs.subject || "",
 		message: inputs.message || "",
 		to: inputs.to || "",
 
 	};
-
-	inputs.callbacks = inputs.callbacks ?
-		eval("inputs.callbacks = {" + inputs.events + " : function(event, callbackData) {" + inputs.callbacks + "}}") :
-		inputs.callbacks;
-
-	inputs.callbackData = inputs.callbackData ? {record: inputs.callbackData} : inputs.callbackData;
 
 	var msg = {
 		"message": {
@@ -54,7 +46,7 @@ step.sendEmailMandrill = function (inputs) {
 		defaultCallback: !!inputs.events
 	}
 
-	return endpoint._post(options, inputs.callbackData, inputs.callbacks);
+	return endpoint._post(options);
 
 };
 
