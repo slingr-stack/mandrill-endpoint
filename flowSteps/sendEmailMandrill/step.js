@@ -56,8 +56,7 @@ step.sendEmailMandrill = function (inputs) {
 
 	var options = {
 		path: "/messages/send",
-		body: msg,
-		defaultCallback: !!inputs.events
+		body: msg
 	}
 
 	return endpoint._post(options);
