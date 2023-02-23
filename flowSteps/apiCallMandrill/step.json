@@ -1,5 +1,5 @@
 {
-  "label": "API call to Mandrill",
+  "label": "API call to mandrill",
   "name": "apiCallMandrill",
   "category": "integrations",
   "description": "This flow step will send generic request",
@@ -9,280 +9,278 @@
       "name": "url",
       "description": "The method and path to which this endpoint will send the request.",
       "type": "urlParams",
-      "required": "false",
+      "required": "true",
       "options": {
         "type": "dropDown",
-        "possibleValues": {
-          "post": [
+        "possibleValues": [
             {
-              "label": "/users/info"
+              "label": "POST /users/info"
             },
             {
-              "label": "/users/ping"
+              "label": "POST /users/ping"
             },
             {
-              "label": "/users/ping2"
+              "label": "POST /users/ping2"
             },
             {
-              "label": "/users/senders"
+              "label": "POST /users/senders"
             },
             {
-              "label": "/messages/send"
+              "label": "POST /messages/send"
             },
             {
-              "label": "/messages/send-template"
+              "label": "POST /messages/send-template"
             },
             {
-              "label": "/messages/search"
+              "label": "POST /messages/search"
             },
             {
-              "label": "/messages/search-time-series"
+              "label": "POST /messages/search-time-series"
             },
             {
-              "label": "/messages/info"
+              "label": "POST /messages/info"
             },
             {
-              "label": "/messages/content"
+              "label": "POST /messages/content"
             },
             {
-              "label": "/messages/parse"
+              "label": "POST /messages/parse"
             },
             {
-              "label": "/messages/send-raw"
+              "label": "POST /messages/send-raw"
             },
             {
-              "label": "/messages/list-scheduled"
+              "label": "POST /messages/list-scheduled"
             },
             {
-              "label": "/messages/cancel-scheduled"
+              "label": "POST /messages/cancel-scheduled"
             },
             {
-              "label": "/messages/reschedule"
+              "label": "POST /messages/reschedule"
             },
             {
-              "label": "/tags/list"
+              "label": "POST /tags/list"
             },
             {
-              "label": "/tags/delete"
+              "label": "POST /tags/delete"
             },
             {
-              "label": "/tags/info"
+              "label": "POST /tags/info"
             },
             {
-              "label": "/tags/time-series"
+              "label": "POST /tags/time-series"
             },
             {
-              "label": "/tags/all-time-series"
+              "label": "POST /tags/all-time-series"
             },
             {
-              "label": "/rejects/add"
+              "label": "POST /rejects/add"
             },
             {
-              "label": "/rejects/list"
+              "label": "POST /rejects/list"
             },
             {
-              "label": "/rejects/delete"
+              "label": "POST /rejects/delete"
             },
             {
-              "label": "/whitelists/add"
+              "label": "POST /whitelists/add"
             },
             {
-              "label": "/whitelists/list"
+              "label": "POST /whitelists/list"
             },
             {
-              "label": "/whitelists/delete"
+              "label": "POST /whitelists/delete"
             },
             {
-              "label": "/senders/list"
+              "label": "POST /senders/list"
             },
             {
-              "label": "/senders/domains"
+              "label": "POST /senders/domains"
             },
             {
-              "label": "/senders/add-domain"
+              "label": "POST /senders/add-domain"
             },
             {
-              "label": "/senders/check-domain"
+              "label": "POST /senders/check-domain"
             },
             {
-              "label": "/senders/verify-domain"
+              "label": "POST /senders/verify-domain"
             },
             {
-              "label": "/senders/info"
+              "label": "POST /senders/info"
             },
             {
-              "label": "/senders/time-series"
+              "label": "POST /senders/time-series"
             },
             {
-              "label": "/urls/list"
+              "label": "POST /urls/list"
             },
             {
-              "label": "/urls/search"
+              "label": "POST /urls/search"
             },
             {
-              "label": "/urls/time-series"
+              "label": "POST /urls/time-series"
             },
             {
-              "label": "/urls/tracking-domains"
+              "label": "POST /urls/tracking-domains"
             },
             {
-              "label": "/urls/check-tracking-domain"
+              "label": "POST /urls/check-tracking-domain"
             },
             {
-              "label": "/templates/add"
+              "label": "POST /templates/add"
             },
             {
-              "label": "/templates/info"
+              "label": "POST /templates/info"
             },
             {
-              "label": "/templates/update"
+              "label": "POST /templates/update"
             },
             {
-              "label": "/templates/publish"
+              "label": "POST /templates/publish"
             },
             {
-              "label": "/templates/delete"
+              "label": "POST /templates/delete"
             },
             {
-              "label": "/templates/list"
+              "label": "POST /templates/list"
             },
             {
-              "label": "/templates/time-series"
+              "label": "POST /templates/time-series"
             },
             {
-              "label": "/templates/render"
+              "label": "POST /templates/render"
             },
             {
-              "label": "/webhooks/list"
+              "label": "POST /webhooks/list"
             },
             {
-              "label": "/webhooks/add"
+              "label": "POST /webhooks/add"
             },
             {
-              "label": "/webhooks/info"
+              "label": "POST /webhooks/info"
             },
             {
-              "label": "/webhooks/update"
+              "label": "POST /webhooks/update"
             },
             {
-              "label": "/webhooks/delete"
+              "label": "POST /webhooks/delete"
             },
             {
-              "label": "/subaccounts/list"
+              "label": "POST /subaccounts/list"
             },
             {
-              "label": "/subaccounts/add"
+              "label": "POST /subaccounts/add"
             },
             {
-              "label": "/subaccounts/info"
+              "label": "POST /subaccounts/info"
             },
             {
-              "label": "/subaccounts/update"
+              "label": "POST /subaccounts/update"
             },
             {
-              "label": "/subaccounts/delete"
+              "label": "POST /subaccounts/delete"
             },
             {
-              "label": "/subaccounts/pause"
+              "label": "POST /subaccounts/pause"
             },
             {
-              "label": "/subaccounts/resume"
+              "label": "POST /subaccounts/resume"
             },
             {
-              "label": "/inbound/domains"
+              "label": "POST /inbound/domains"
             },
             {
-              "label": "/inbound/add-domain"
+              "label": "POST /inbound/add-domain"
             },
             {
-              "label": "/inbound/check-domain"
+              "label": "POST /inbound/check-domain"
             },
             {
-              "label": "/inbound/delete-domain"
+              "label": "POST /inbound/delete-domain"
             },
             {
-              "label": "/inbound/routes"
+              "label": "POST /inbound/routes"
             },
             {
-              "label": "/inbound/add-route"
+              "label": "POST /inbound/add-route"
             },
             {
-              "label": "/inbound/update-route"
+              "label": "POST /inbound/update-route"
             },
             {
-              "label": "/inbound/delete-route"
+              "label": "POST /inbound/delete-route"
             },
             {
-              "label": "/inbound/send-raw"
+              "label": "POST /inbound/send-raw"
             },
             {
-              "label": "/exports/info"
+              "label": "POST /exports/info"
             },
             {
-              "label": "/exports/list"
+              "label": "POST /exports/list"
             },
             {
-              "label": "/exports/rejects"
+              "label": "POST /exports/rejects"
             },
             {
-              "label": "/exports/whitelist"
+              "label": "POST /exports/whitelist"
             },
             {
-              "label": "/exports/activity"
+              "label": "POST /exports/activity"
             },
             {
-              "label": "/ips/list"
+              "label": "POST /ips/list"
             },
             {
-              "label": "/ips/info"
+              "label": "POST /ips/info"
             },
             {
-              "label": "/ips/provision"
+              "label": "POST /ips/provision"
             },
             {
-              "label": "/ips/start-warmup"
+              "label": "POST /ips/start-warmup"
             },
             {
-              "label": "/ips/cancel-warmup"
+              "label": "POST /ips/cancel-warmup"
             },
             {
-              "label": "/ips/set-pool"
+              "label": "POST /ips/set-pool"
             },
             {
-              "label": "/ips/delete"
+              "label": "POST /ips/delete"
             },
             {
-              "label": "/ips/list-pools"
+              "label": "POST /ips/list-pools"
             },
             {
-              "label": "/ips/pool-info"
+              "label": "POST /ips/pool-info"
             },
             {
-              "label": "/ips/create-pool"
+              "label": "POST /ips/create-pool"
             },
             {
-              "label": "/ips/delete-pool"
+              "label": "POST /ips/delete-pool"
             },
             {
-              "label": "/ips/check-custom-dns"
+              "label": "POST /ips/check-custom-dns"
             },
             {
-              "label": "/ips/set-custom-dns"
+              "label": "POST /ips/set-custom-dns"
             },
             {
-              "label": "/metadata/list"
+              "label": "POST /metadata/list"
             },
             {
-              "label": "/metadata/add"
+              "label": "POST /metadata/add"
             },
             {
-              "label": "/metadata/update"
+              "label": "POST /metadata/update"
             },
             {
-              "label": "/metadata/delete"
+              "label": "POST /metadata/delete"
             }
-          ]
-        }
+        ]
       }
     },
     {
@@ -304,48 +302,6 @@
       "description": "This is used to set body request",
       "options": {
         "allowContextSelector": "true"
-      }
-    },
-    {
-      "label": "Event",
-      "name": "events",
-      "type": "dropDown",
-      "description": "Select event",
-      "multiplicity": "one",
-      "options": {
-        "possibleValues": [
-          {
-            "label": "File Downloaded",
-            "name": "fileDownloaded"
-          },
-          {
-            "label": "Callback",
-            "name": "callback"
-          }
-        ],
-        "allowContextSelector": "false"
-      }
-    },
-    {
-      "label": "Callback Data",
-      "name": "callbackData",
-      "type": "text",
-      "description": "This is an object you can send that you will get back when the function is processed",
-      "visibility": "config.events",
-      "options": {
-        "representation": "textArea",
-        "allowContextSelector": "true"
-      }
-    },
-    {
-      "label": "Callbacks",
-      "name": "callbacks",
-      "type": "script",
-      "description": "This is a map where you can listener for different function",
-      "visibility": "config.events",
-      "options": {
-        "allowContextSelector": "false",
-        "parameters": ["event","callbackData"]
       }
     },
     {
