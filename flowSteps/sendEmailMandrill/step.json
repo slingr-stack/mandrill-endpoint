@@ -46,7 +46,7 @@
       "label": "Attach file",
       "name": "attachFile",
       "type": "fileUploader",
-      "description": "The dynamic object to be set as a variable.",
+      "description": "Allows you to attach a file.",
       "visibility": true,
       "required": false
     }

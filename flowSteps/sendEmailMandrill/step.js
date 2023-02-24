@@ -42,7 +42,8 @@ step.sendEmailMandrill = function (inputs) {
 				},
 				{
 					"type": inputs.attachFile.type,
-					"name": inputs.attachFile.fileName
+					"name": inputs.attachFile.fileName,
+					"content": "ZXhhbXBsZSBmaWxl"
 				}
 			],
 			"to": [
