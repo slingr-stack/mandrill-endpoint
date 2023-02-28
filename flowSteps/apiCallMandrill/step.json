@@ -2,12 +2,12 @@
   "label": "API call to mandrill",
   "name": "apiCallMandrill",
   "category": "integrations",
-  "description": "This flow step will send generic request",
+  "description": "This flow step will send generic request to mandrill",
   "inputs": [
     {
       "label": "Url",
       "name": "url",
-      "description": "The method and path to which this endpoint will send the request.",
+      "description": "The method and path to which this endpoint is to send requests in a generic way.",
       "type": "urlParams",
       "required": "true",
       "options": {
@@ -286,22 +286,38 @@
     {
       "label": "Headers",
       "name": "headers",
-      "description": "The headers have the 'key=value' form, per example: key=ABC123",
+      "description": "Let the client and the server pass additional information with the HTTP request in a key value format. (e.g. key=ABC123)",
       "type": "keyValue"
     },
     {
-      "label": "Params",
+      "label": "Query Params",
       "name": "params",
-      "description": "The params have the 'key=value' form, per example: key=ABC123",
+      "description": "Parameters attached to the end of a url in a key value format. (e.g. key=ABC123)",
       "type": "keyValue"
     },
     {
       "label": "Body",
       "name": "body",
       "type": "json",
-      "description": "This is used to set body request",
+      "description": "Content to be sent to the server.",
       "options": {
-        "allowContextSelector": "true"
+        "allowContextSelector": "false"
+      }
+    },
+    {
+      "label": "Event",
+      "name": "events",
+      "type": "dropDown",
+      "description": "Select event",
+      "multiplicity": "one",
+      "options": {
+        "possibleValues": [
+          {
+            "label": "File Downloaded",
+            "name": "fileDownloaded"
+          }
+        ],
+        "allowContextSelector": "false"
       }
     },
     {

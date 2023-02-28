@@ -2,14 +2,15 @@
 
 The Javascript API of the mandrill endpoint has three pieces:
 
-- **HTTP requests**: These allows to make regular HTTP requests.
+- **HTTP requests**: These allow to make regular HTTP requests.
 - **Shortcuts**: These are helpers to make HTTP request to the API in a more convenient way.
 - **Additional Helpers**: These helpers provide additional features that facilitate or improves the endpoint usage in SLINGR.
 
 ## HTTP requests
 You can make `POST` requests to the [mandrill API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.mandrill.post('/inbound/check-domain', body)
+var response = app.endpoints.mandrill.post('/senders/check-domain', body)
+var response = app.endpoints.mandrill.post('/senders/check-domain')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -559,10 +560,10 @@ app.endpoints.mandrill.metadata.delete.post(body)
 ---
 
 </details>
-
+    
 ## Flow Step
 
-As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint:
+As an alternative option to using scripts, you can make use of Flows and Flow Steps specifically created for the endpoint: 
 <details>
     <summary>Click here to see the Flow Steps</summary>
 
@@ -583,13 +584,13 @@ Generic flow step for full use of the entire endpoint and its services.
         <th>Type</th>
         <th>Required</th>
         <th>Default</th>
-        <th>Visility</th>
+        <th>Visibility</th>
         <th>Description</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-        <td>URL</td>
+        <td>URL (Method)</td>
         <td>choice</td>
         <td>yes</td>
         <td> - </td>
@@ -597,11 +598,11 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>
             This is the http method to be used against the endpoint. <br>
             Possible values are: <br>
-            <i><strong>post</strong></i>
+            <i><strong>POST</strong></i>
         </td>
     </tr>
     <tr>
-        <td>Path</td>
+        <td>URL (Path)</td>
         <td>choice</td>
         <td>yes</td>
         <td> - </td>
@@ -614,22 +615,32 @@ Generic flow step for full use of the entire endpoint and its services.
     </tr>
     <tr>
         <td>Headers</td>
-        <td>text</td>
+        <td>keyValue</td>
         <td>no</td>
         <td> - </td>
         <td>Always</td>
         <td>
-            Used when you want to have a custom http header for the query.
+            Used when you want to have a custom http header for the request.
         </td>
     </tr>
     <tr>
-        <td>Params</td>
-        <td>text</td>
+        <td>Query Params</td>
+        <td>keyValue</td>
         <td>no</td>
         <td> - </td>
         <td>Always</td>
         <td>
             Used when you want to have a custom query params for the http call.
+        </td>
+    </tr>
+    <tr>
+        <td>Body</td>
+        <td>json</td>
+        <td>no</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            A payload of data can be sent to the server in the body of the request.
         </td>
     </tr>
     <tr>
@@ -639,27 +650,9 @@ Generic flow step for full use of the entire endpoint and its services.
         <td> - </td>
         <td>Always</td>
         <td>
-            Used to define event after the call.
-        </td>
-    </tr>
-    <tr>
-        <td>Callback data</td>
-        <td>textarea</td>
-        <td>no</td>
-        <td> - </td>
-        <td> Event is Callback </td>
-        <td>
-            This is an object you can send that you will get back when the function is processed.
-        </td>
-    </tr>
-    <tr>
-        <td>Callbacks</td>
-        <td>Script</td>
-        <td>no</td>
-        <td> - </td>
-        <td> Event is Callback </td>
-        <td>
-            This is a map where you can listen for different function
+            Used to define event after the call. <br>
+            Possible values are: <br>
+            File Downloaded
         </td>
     </tr>
     <tr>
@@ -684,7 +677,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>no</td>
         <td> false </td>
         <td> overrideSettings </td>
-        <td>If true the method won't return until the file has been downloaded and it will return all the information of the file.</td>
+        <td>If true the method won't return until the file has been downloaded, and it will return all the information of the file.</td>
     </tr>
     <tr>
         <td>File name</td>
@@ -703,7 +696,7 @@ Generic flow step for full use of the entire endpoint and its services.
         <td>Include extended information about response</td>
     </tr>
     <tr>
-        <td>Conection Timeout</td>
+        <td>Connection Timeout</td>
         <td> number </td>
         <td>no</td>
         <td> 5000 </td>
@@ -746,6 +739,25 @@ Generic flow step for full use of the entire endpoint and its services.
 </details>
 
 For more information about how shortcuts or flow steps works, and how they are generated, take a look at the [slingr-helpgen tool](https://github.com/slingr-stack/slingr-helpgen).
+
+## Additional Flow Step
+
+
+<details>
+    <summary>Click here to see the Customs Flow Steps</summary>
+
+<br>
+
+
+
+### Custom Flow Steps Name
+
+Description of Custom Flow Steps
+
+*MANUALLY ADD THE DOCUMENTATION OF THESE FLOW STEPS HERE...*
+
+
+</details>
 
 ## Additional Helpers
 *MANUALLY ADD THE DOCUMENTATION OF THESE HELPERS HERE...*
