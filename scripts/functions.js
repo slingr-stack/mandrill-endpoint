@@ -841,41 +841,71 @@ endpoint.metadata.delete.post = function(httpOptions) {
 // Public API - Generic Functions //
 ////////////////////////////////////
 
-endpoint.get = function(url, httpOptions) {
+endpoint.get = function(url, httpOptions, callbackData, callbacks) {
     var options = checkHttpOptions(url, httpOptions);
-    return endpoint._get(options);
+    return endpoint._get(options, callbackData, callbacks);
 };
 
-endpoint.post = function(url, httpOptions) {
+endpoint.post = function(url, httpOptions, callbackData, callbacks) {
     options = checkHttpOptions(url, httpOptions);
-    return endpoint._post(options);
+    return endpoint._post(options, callbackData, callbacks);
 };
 
-endpoint.put = function(url, httpOptions) {
+endpoint.put = function(url, httpOptions, callbackData, callbacks) {
     options = checkHttpOptions(url, httpOptions);
-    return endpoint._put(options);
+    return endpoint._put(options, callbackData, callbacks);
 };
 
-endpoint.patch = function(url, httpOptions) {
+endpoint.patch = function(url, httpOptions, callbackData, callbacks) {
     options = checkHttpOptions(url, httpOptions);
-    return endpoint._patch(options);
+    return endpoint._patch(options, callbackData, callbacks);
 };
 
-endpoint.delete = function(url, httpOptions) {
+endpoint.delete = function(url, httpOptions, callbackData, callbacks) {
     var options = checkHttpOptions(url, httpOptions);
-    return endpoint._delete(options);
+    return endpoint._delete(options, callbackData, callbacks);
 };
 
-endpoint.head = function(url, httpOptions) {
+endpoint.head = function(url, httpOptions, callbackData, callbacks) {
     var options = checkHttpOptions(url, httpOptions);
-    return endpoint._head(options);
+    return endpoint._head(options, callbackData, callbacks);
 };
 
-endpoint.options = function(url, httpOptions) {
+endpoint.options = function(url, httpOptions, callbackData, callbacks) {
     var options = checkHttpOptions(url, httpOptions);
-    return endpoint._options(options);
+    return endpoint._options(options, callbackData, callbacks);
 };
 
+endpoint.utils = {};
+            
+endpoint.utils.parseTimestamp = function(dateString) {
+    if (!dateString) {
+        return null;
+    }
+    var dt = dateString.split(/[: T\-]/).map(parseFloat);
+    return new Date(dt[0], dt[1] - 1, dt[2], dt[3] || 0, dt[4] || 0, dt[5] || 0, 0);
+};
+
+endpoint.utils.formatTimestamp = function(date) {
+    if (!date) {
+        return null;
+    }
+    var pad = function(number) {
+        var r = String(number);
+        if ( r.length === 1 ) {
+            r = '0' + r;
+        }
+        return r;
+    };
+    return date.getUTCFullYear()
+        + '-' + pad( date.getUTCMonth() + 1 )
+        + '-' + pad( date.getUTCDate() )
+        + 'T' + pad( date.getUTCHours() )
+        + ':' + pad( date.getUTCMinutes() )
+        + ':' + pad( date.getUTCSeconds() )
+        + '.' + String( (date.getUTCMilliseconds()/1000).toFixed(3) ).slice( 2, 5 )
+        + 'Z';
+};
 
 ///////////////////////
 //  Private helpers  //
