@@ -9,8 +9,8 @@ The Javascript API of the mandrill endpoint has three pieces:
 ## HTTP requests
 You can make `POST` requests to the [mandrill API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.mandrill.post('/senders/check-domain', body)
-var response = app.endpoints.mandrill.post('/senders/check-domain')
+var response = app.endpoints.mandrill.post('/ips/provision', body)
+var response = app.endpoints.mandrill.post('/ips/provision')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
@@ -27,535 +27,535 @@ Instead of having to use the generic HTTP methods, you can (and should) make use
 * API URL: '/users/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.users.info.post(body)
+app.endpoints.mandrill.users.info.post(bod)
 ```
 ---
 * API URL: '/users/ping'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.users.ping.post(body)
+app.endpoints.mandrill.users.ping.post(bod)
 ```
 ---
 * API URL: '/users/ping2'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.users.ping2.post(body)
+app.endpoints.mandrill.users.ping2.post(bod)
 ```
 ---
 * API URL: '/users/senders'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.users.senders.post(body)
+app.endpoints.mandrill.users.senders.post(bod)
 ```
 ---
 * API URL: '/messages/send'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.send.post(body)
+app.endpoints.mandrill.messages.send.post(bod)
 ```
 ---
 * API URL: '/messages/send-template'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.sendTemplate.post(body)
+app.endpoints.mandrill.messages.sendTemplate.post(bod)
 ```
 ---
 * API URL: '/messages/search'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.search.post(body)
+app.endpoints.mandrill.messages.search.post(bod)
 ```
 ---
 * API URL: '/messages/search-time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.searchTimeSeries.post(body)
+app.endpoints.mandrill.messages.searchTimeSeries.post(bod)
 ```
 ---
 * API URL: '/messages/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.info.post(body)
+app.endpoints.mandrill.messages.info.post(bod)
 ```
 ---
 * API URL: '/messages/content'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.content.post(body)
+app.endpoints.mandrill.messages.content.post(bod)
 ```
 ---
 * API URL: '/messages/parse'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.parse.post(body)
+app.endpoints.mandrill.messages.parse.post(bod)
 ```
 ---
 * API URL: '/messages/send-raw'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.sendRaw.post(body)
+app.endpoints.mandrill.messages.sendRaw.post(bod)
 ```
 ---
 * API URL: '/messages/list-scheduled'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.listScheduled.post(body)
+app.endpoints.mandrill.messages.listScheduled.post(bod)
 ```
 ---
 * API URL: '/messages/cancel-scheduled'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.cancelScheduled.post(body)
+app.endpoints.mandrill.messages.cancelScheduled.post(bod)
 ```
 ---
 * API URL: '/messages/reschedule'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.messages.reschedule.post(body)
+app.endpoints.mandrill.messages.reschedule.post(bod)
 ```
 ---
 * API URL: '/tags/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.tags.list.post(body)
+app.endpoints.mandrill.tags.list.post(bod)
 ```
 ---
 * API URL: '/tags/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.tags.delete.post(body)
+app.endpoints.mandrill.tags.delete.post(bod)
 ```
 ---
 * API URL: '/tags/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.tags.info.post(body)
+app.endpoints.mandrill.tags.info.post(bod)
 ```
 ---
 * API URL: '/tags/time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.tags.timeSeries.post(body)
+app.endpoints.mandrill.tags.timeSeries.post(bod)
 ```
 ---
 * API URL: '/tags/all-time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.tags.allTimeSeries.post(body)
+app.endpoints.mandrill.tags.allTimeSeries.post(bod)
 ```
 ---
 * API URL: '/rejects/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.rejects.add.post(body)
+app.endpoints.mandrill.rejects.add.post(bod)
 ```
 ---
 * API URL: '/rejects/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.rejects.list.post(body)
+app.endpoints.mandrill.rejects.list.post(bod)
 ```
 ---
 * API URL: '/rejects/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.rejects.delete.post(body)
+app.endpoints.mandrill.rejects.delete.post(bod)
 ```
 ---
 * API URL: '/whitelists/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.whitelists.add.post(body)
+app.endpoints.mandrill.whitelists.add.post(bod)
 ```
 ---
 * API URL: '/whitelists/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.whitelists.list.post(body)
+app.endpoints.mandrill.whitelists.list.post(bod)
 ```
 ---
 * API URL: '/whitelists/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.whitelists.delete.post(body)
+app.endpoints.mandrill.whitelists.delete.post(bod)
 ```
 ---
 * API URL: '/senders/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.list.post(body)
+app.endpoints.mandrill.senders.list.post(bod)
 ```
 ---
 * API URL: '/senders/domains'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.domains.post(body)
+app.endpoints.mandrill.senders.domains.post(bod)
 ```
 ---
 * API URL: '/senders/add-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.addDomain.post(body)
+app.endpoints.mandrill.senders.addDomain.post(bod)
 ```
 ---
 * API URL: '/senders/check-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.checkDomain.post(body)
+app.endpoints.mandrill.senders.checkDomain.post(bod)
 ```
 ---
 * API URL: '/senders/verify-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.verifyDomain.post(body)
+app.endpoints.mandrill.senders.verifyDomain.post(bod)
 ```
 ---
 * API URL: '/senders/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.info.post(body)
+app.endpoints.mandrill.senders.info.post(bod)
 ```
 ---
 * API URL: '/senders/time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.senders.timeSeries.post(body)
+app.endpoints.mandrill.senders.timeSeries.post(bod)
 ```
 ---
 * API URL: '/urls/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.urls.list.post(body)
+app.endpoints.mandrill.urls.list.post(bod)
 ```
 ---
 * API URL: '/urls/search'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.urls.search.post(body)
+app.endpoints.mandrill.urls.search.post(bod)
 ```
 ---
 * API URL: '/urls/time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.urls.timeSeries.post(body)
+app.endpoints.mandrill.urls.timeSeries.post(bod)
 ```
 ---
 * API URL: '/urls/tracking-domains'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.urls.trackingDomains.post(body)
+app.endpoints.mandrill.urls.trackingDomains.post(bod)
 ```
 ---
 * API URL: '/urls/check-tracking-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.urls.checkTrackingDomain.post(body)
+app.endpoints.mandrill.urls.checkTrackingDomain.post(bod)
 ```
 ---
 * API URL: '/templates/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.add.post(body)
+app.endpoints.mandrill.templates.add.post(bod)
 ```
 ---
 * API URL: '/templates/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.info.post(body)
+app.endpoints.mandrill.templates.info.post(bod)
 ```
 ---
 * API URL: '/templates/update'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.update.post(body)
+app.endpoints.mandrill.templates.update.post(bod)
 ```
 ---
 * API URL: '/templates/publish'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.publish.post(body)
+app.endpoints.mandrill.templates.publish.post(bod)
 ```
 ---
 * API URL: '/templates/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.delete.post(body)
+app.endpoints.mandrill.templates.delete.post(bod)
 ```
 ---
 * API URL: '/templates/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.list.post(body)
+app.endpoints.mandrill.templates.list.post(bod)
 ```
 ---
 * API URL: '/templates/time-series'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.timeSeries.post(body)
+app.endpoints.mandrill.templates.timeSeries.post(bod)
 ```
 ---
 * API URL: '/templates/render'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.templates.render.post(body)
+app.endpoints.mandrill.templates.render.post(bod)
 ```
 ---
 * API URL: '/webhooks/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.webhooks.list.post(body)
+app.endpoints.mandrill.webhooks.list.post(bod)
 ```
 ---
 * API URL: '/webhooks/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.webhooks.add.post(body)
+app.endpoints.mandrill.webhooks.add.post(bod)
 ```
 ---
 * API URL: '/webhooks/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.webhooks.info.post(body)
+app.endpoints.mandrill.webhooks.info.post(bod)
 ```
 ---
 * API URL: '/webhooks/update'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.webhooks.update.post(body)
+app.endpoints.mandrill.webhooks.update.post(bod)
 ```
 ---
 * API URL: '/webhooks/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.webhooks.delete.post(body)
+app.endpoints.mandrill.webhooks.delete.post(bod)
 ```
 ---
 * API URL: '/subaccounts/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.list.post(body)
+app.endpoints.mandrill.subaccounts.list.post(bod)
 ```
 ---
 * API URL: '/subaccounts/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.add.post(body)
+app.endpoints.mandrill.subaccounts.add.post(bod)
 ```
 ---
 * API URL: '/subaccounts/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.info.post(body)
+app.endpoints.mandrill.subaccounts.info.post(bod)
 ```
 ---
 * API URL: '/subaccounts/update'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.update.post(body)
+app.endpoints.mandrill.subaccounts.update.post(bod)
 ```
 ---
 * API URL: '/subaccounts/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.delete.post(body)
+app.endpoints.mandrill.subaccounts.delete.post(bod)
 ```
 ---
 * API URL: '/subaccounts/pause'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.pause.post(body)
+app.endpoints.mandrill.subaccounts.pause.post(bod)
 ```
 ---
 * API URL: '/subaccounts/resume'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.subaccounts.resume.post(body)
+app.endpoints.mandrill.subaccounts.resume.post(bod)
 ```
 ---
 * API URL: '/inbound/domains'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.domains.post(body)
+app.endpoints.mandrill.inbound.domains.post(bod)
 ```
 ---
 * API URL: '/inbound/add-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.addDomain.post(body)
+app.endpoints.mandrill.inbound.addDomain.post(bod)
 ```
 ---
 * API URL: '/inbound/check-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.checkDomain.post(body)
+app.endpoints.mandrill.inbound.checkDomain.post(bod)
 ```
 ---
 * API URL: '/inbound/delete-domain'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.deleteDomain.post(body)
+app.endpoints.mandrill.inbound.deleteDomain.post(bod)
 ```
 ---
 * API URL: '/inbound/routes'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.routes.post(body)
+app.endpoints.mandrill.inbound.routes.post(bod)
 ```
 ---
 * API URL: '/inbound/add-route'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.addRoute.post(body)
+app.endpoints.mandrill.inbound.addRoute.post(bod)
 ```
 ---
 * API URL: '/inbound/update-route'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.updateRoute.post(body)
+app.endpoints.mandrill.inbound.updateRoute.post(bod)
 ```
 ---
 * API URL: '/inbound/delete-route'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.deleteRoute.post(body)
+app.endpoints.mandrill.inbound.deleteRoute.post(bod)
 ```
 ---
 * API URL: '/inbound/send-raw'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.inbound.sendRaw.post(body)
+app.endpoints.mandrill.inbound.sendRaw.post(bod)
 ```
 ---
 * API URL: '/exports/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.exports.info.post(body)
+app.endpoints.mandrill.exports.info.post(bod)
 ```
 ---
 * API URL: '/exports/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.exports.list.post(body)
+app.endpoints.mandrill.exports.list.post(bod)
 ```
 ---
 * API URL: '/exports/rejects'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.exports.rejects.post(body)
+app.endpoints.mandrill.exports.rejects.post(bod)
 ```
 ---
 * API URL: '/exports/whitelist'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.exports.whitelist.post(body)
+app.endpoints.mandrill.exports.whitelist.post(bod)
 ```
 ---
 * API URL: '/exports/activity'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.exports.activity.post(body)
+app.endpoints.mandrill.exports.activity.post(bod)
 ```
 ---
 * API URL: '/ips/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.list.post(body)
+app.endpoints.mandrill.ips.list.post(bod)
 ```
 ---
 * API URL: '/ips/info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.info.post(body)
+app.endpoints.mandrill.ips.info.post(bod)
 ```
 ---
 * API URL: '/ips/provision'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.provision.post(body)
+app.endpoints.mandrill.ips.provision.post(bod)
 ```
 ---
 * API URL: '/ips/start-warmup'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.startWarmup.post(body)
+app.endpoints.mandrill.ips.startWarmup.post(bod)
 ```
 ---
 * API URL: '/ips/cancel-warmup'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.cancelWarmup.post(body)
+app.endpoints.mandrill.ips.cancelWarmup.post(bod)
 ```
 ---
 * API URL: '/ips/set-pool'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.setPool.post(body)
+app.endpoints.mandrill.ips.setPool.post(bod)
 ```
 ---
 * API URL: '/ips/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.delete.post(body)
+app.endpoints.mandrill.ips.delete.post(bod)
 ```
 ---
 * API URL: '/ips/list-pools'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.listPools.post(body)
+app.endpoints.mandrill.ips.listPools.post(bod)
 ```
 ---
 * API URL: '/ips/pool-info'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.poolInfo.post(body)
+app.endpoints.mandrill.ips.poolInfo.post(bod)
 ```
 ---
 * API URL: '/ips/create-pool'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.createPool.post(body)
+app.endpoints.mandrill.ips.createPool.post(bod)
 ```
 ---
 * API URL: '/ips/delete-pool'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.deletePool.post(body)
+app.endpoints.mandrill.ips.deletePool.post(bod)
 ```
 ---
 * API URL: '/ips/check-custom-dns'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.checkCustomDns.post(body)
+app.endpoints.mandrill.ips.checkCustomDns.post(bod)
 ```
 ---
 * API URL: '/ips/set-custom-dns'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.ips.setCustomDns.post(body)
+app.endpoints.mandrill.ips.setCustomDns.post(bod)
 ```
 ---
 * API URL: '/metadata/list'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.metadata.list.post(body)
+app.endpoints.mandrill.metadata.list.post(bod)
 ```
 ---
 * API URL: '/metadata/add'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.metadata.add.post(body)
+app.endpoints.mandrill.metadata.add.post(bod)
 ```
 ---
 * API URL: '/metadata/update'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.metadata.update.post(body)
+app.endpoints.mandrill.metadata.update.post(bod)
 ```
 ---
 * API URL: '/metadata/delete'
 * HTTP Method: 'POST'
 ```javascript
-app.endpoints.mandrill.metadata.delete.post(body)
+app.endpoints.mandrill.metadata.delete.post(bod)
 ```
 ---
 
