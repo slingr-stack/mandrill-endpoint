@@ -38,7 +38,7 @@ step.sendEmailMandrill = function (inputs) {
 			"html": inputs.message,
 			"attachments": [
 				{
-					"file_id": inputs.attachFile.fileId
+					"file_id": inputs.attachFile.fileName
 				},
 				{
 					"type": inputs.attachFile.type,
