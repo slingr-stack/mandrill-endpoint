@@ -9,8 +9,8 @@ The Javascript API of the mandrill endpoint has three pieces:
 ## HTTP requests
 You can make `POST` requests to the [mandrill API](API_URL_HERE) like this:
 ```javascript
-var response = app.endpoints.mandrill.post('/subaccounts/delete', body)
-var response = app.endpoints.mandrill.post('/subaccounts/delete')
+var response = app.endpoints.mandrill.post('/tags/info', body)
+var response = app.endpoints.mandrill.post('/tags/info')
 ```
 
 Please take a look at the documentation of the [HTTP endpoint](https://github.com/slingr-stack/http-endpoint#javascript-api)
