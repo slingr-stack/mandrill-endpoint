@@ -20,7 +20,7 @@ step.apiCallMandrill = function (inputs) {
     headers: inputs.headers || [],
     params: inputs.params || [],
     body: inputs.body || {},
-		followRedirects:inputs.followRedirects|| false,
+	followRedirects: inputs.followRedirects || false,
     download: inputs.download || false,
     fileName: inputs.fileName || "",
     fullResponse: inputs.fullResponse || false,
