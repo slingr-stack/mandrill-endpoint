@@ -125,7 +125,7 @@ public class MandrillEndpoint extends HttpEndpoint {
 
             req.set("body", body);
 
-            Json response = httpService().defaultPostRequest(req, request.getFunctionId());
+            Json response = httpService().defaultPostRequest(req);
 
             List<String> ids = new ArrayList<>();
             List<String> emails = new ArrayList<>();
@@ -154,7 +154,7 @@ public class MandrillEndpoint extends HttpEndpoint {
 
         } else {
             req.set("body", body);
-            return httpService().defaultPostRequest(req, request.getFunctionId());
+            return httpService().defaultPostRequest(req);
         }
 
     }
