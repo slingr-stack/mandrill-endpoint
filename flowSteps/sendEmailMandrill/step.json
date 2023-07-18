@@ -9,6 +9,7 @@
       "name": "from",
       "type": "text",
       "required": true,
+      "description":"Field indicating the sender of the email.",
       "options": {
         "allowContextSelector": "true"
       }
@@ -18,6 +19,7 @@
       "name": "to",
       "type": "text",
       "required": true,
+      "description":"Field indicating the recipient of the email.",
       "options": {
         "validation": "email",
         "allowContextSelector": "true"
@@ -28,6 +30,7 @@
       "name": "subject",
       "type": "text",
       "required": true,
+      "description":"Field indicating the subject of the email.",
       "options": {
         "allowContextSelector": "true"
       }
@@ -37,6 +40,7 @@
       "name": "message",
       "type": "text",
       "required": true,
+      "description":"Field containing the content of the email.",
       "options": {
         "allowContextSelector": "true",
         "representation": "textArea"

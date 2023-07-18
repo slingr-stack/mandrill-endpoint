@@ -851,6 +851,93 @@ For more information about how shortcuts or flow steps works, and how they are g
 
 <br>
 
+### Send Email
+
+This flow step will send generic request.
+
+<table>
+    <thead>
+    <tr>
+        <th>Label</th>
+        <th>Type</th>
+        <th>Required</th>
+        <th>Default</th>
+        <th>Visibility</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>From</td>
+        <td>email</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Field indicating the sender of the email.
+        </td>
+    </tr>
+    <tr>
+        <td>To</td>
+        <td>email</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Field indicating the recipient of the email.
+        </td>
+    </tr>
+    <tr>
+        <td>Subject</td>
+        <td>text</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Field indicating the subject of the email.
+        </td>
+    </tr>
+    <tr>
+        <td>Message</td>
+        <td>text</td>
+        <td>yes</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Field containing the content of the email.
+        </td>
+    </tr>
+    <tr>
+        <td>Attach file</td>
+        <td>attachFile</td>
+        <td>no</td>
+        <td> - </td>
+        <td>Always</td>
+        <td>
+            Allows you to attach a file.
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>response</td>
+        <td>object</td>
+        <td>
+            Object resulting from the response to the endpoint call.
+        </td>
+    </tr>
+    </tbody>
+</table>
 
 
 ### Custom Flow Steps Name
